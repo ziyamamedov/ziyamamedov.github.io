@@ -1,0 +1,22 @@
+.button {
+  display: block;
+  padding: 18px 34px 14px 34px;
+  border-radius: 19% / 50%;
+  font-size: 19px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background-color: $darkGreen;
+  color: white;
+  transition: color .3s, background-color .3s;
+
+  &:hover, &--white {
+    background-color: #fff;
+    color: $darkGreen;
+  }
+
+  &--white:hover {
+    background-color: $darkGreen;
+  color: white;
+  }
+
+}

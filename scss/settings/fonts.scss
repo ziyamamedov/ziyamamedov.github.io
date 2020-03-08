@@ -1,0 +1,39 @@
+
+//Миксин для создания font-face директив
+@mixin font-face($fw: '', $fs: '') {
+  $fow: normal;
+  $fos: normal;
+
+  @if ($fw == 'black') {
+    $fow: 900;
+  } @else if ($fw == 'bold') {
+    $fow: bold;
+  } @else if ($fw == 'extrabold') {
+    $fow: 800;
+  } @else if ($fw == 'medium') {
+    $fow: 500;
+  } @else if ($fw == 'light') {
+    $fow: 300;
+  } @else if ($fw == 'thin') {
+    $fow: 100;
+  }
+
+  @if ($fs == 'italic') {
+    $fos: italic;
+  }
+
+  @font-face {
+  font-family: 'alegreya_sans';
+  src: url('../fonts/alegreyasans-#{$fw}#{$fs}-webfont.woff2') format('woff2'),
+       url('../fonts/alegreyasans-#{$fw}#{$fs}-webfont.woff') format('woff');
+  font-weight: $fow;
+  font-style: $fos;
+  }
+}
+
+//цикл для создания font-face директив
+@each $fw in ('black', 'bold', 'extrabold', 'light', 'medium', 'thin', '') {
+  @each $fs in('', 'italic') {
+    @include font-face($fw, $fs);
+  }
+}

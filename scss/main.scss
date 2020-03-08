@@ -1,0 +1,19 @@
+//settings
+@import './settings/vars';
+@import './settings/mixins';
+@import './settings/normalize';
+@import './settings/fonts';
+@import './settings/base';
+
+
+// components
+@import './components/button';
+@import './components/pagination';
+@import './components/header';
+@import './components/navigation';
+@import './components/welcome';
+@import './components/about';
+@import './components/reviews';
+
+@import './components/footer';
+

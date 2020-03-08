@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  // // margin-bottom: 67px;
+  // margin-bottom: 7.2%;
+}
+.phone-number {
+  display: flex;
+  align-items: flex-start;
+}
+.phone-number__link {
+  color: white;
+  font-size: 24px;
+  position: relative;
+
+  &:before {
+    content: '';
+    ;
+    width: 12px;
+    height: 11px;
+    background: url('../images/icons/phone.png') no-repeat center;
+    position: absolute;
+    right: 100%;
+    top: 14px;
+    margin-right: 6px;
+  }
+
+}
