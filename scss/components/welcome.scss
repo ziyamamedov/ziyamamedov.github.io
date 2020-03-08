@@ -5,15 +5,18 @@
   background-repeat: no-repeat;
   background-position-x: 100%;
   position: relative;
-  padding-bottom: 43px;
 
   .section-main-content {
-    margin-top: auto;
+    margin-top: 7%;
     margin-bottom: auto;
   }
-  .overlaying-img {
+
+  &:after {
+    content: url('../images/img/welcome_overlaying-img_1100.png');
+    display: block;
+    max-width: 100%;
     position: absolute;
-    top: 89%;
+    top: 88%;
     right: 8%;
   }
   

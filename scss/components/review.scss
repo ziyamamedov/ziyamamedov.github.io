@@ -1,0 +1,32 @@
+.review {
+  display: flex;
+}
+
+.review__avatar {
+  width: $reviewsAvatarWidth;
+  height: $reviewsAvatarHeight;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.review__avatar-img {
+  max-width: 100%;
+}
+
+.review__content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.review__title {
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.review__text {
+  color: $biege;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}

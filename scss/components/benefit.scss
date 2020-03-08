@@ -1,0 +1,23 @@
+
+.benefit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.benefit__avatar {
+  @include circle(125px, 125px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $lightBeige;
+  margin-bottom: 25px;
+}
+.benefit__title {
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.benefit__text {
+  color: $biege;
+}
