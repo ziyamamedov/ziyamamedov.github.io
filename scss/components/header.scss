@@ -4,19 +4,21 @@
   padding-top: 24px;
   padding-bottom: 24px;
 }
-.phone-number__link {
+
+.logo__icon {
+  width: 53px;
+  height: 39px;
+  fill:white;
+
+}
+
+.phone-number__icon {
+  fill: white;
+  width: 14px;
+  height: 12px;
+}
+.phone-number {
+  padding-top: 2px;
   color: white;
   font-size: 24px;
-  position: relative;
-
-  &:before {
-    content: '';
-    width: 12px;
-    height: 11px;
-    background: url('../images/icons/phone.png') no-repeat center;
-    position: absolute;
-    right: 100%;
-    top: 14px;
-    margin-right: 6px;
-  }
 }

@@ -1,14 +1,14 @@
 .nav {
   display: flex;
   align-items: center;
+  width: 68%;
 }
 
 .nav__list {
+  width: 100%;
   display: flex;
-}
-
-.nav__item {
-  margin-right: 29px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .nav__link {

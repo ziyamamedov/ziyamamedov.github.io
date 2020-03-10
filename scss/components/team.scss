@@ -1,0 +1,76 @@
+.team {
+  .section-title {
+    margin-bottom: 48px;
+  }
+  &:after {
+    content: url('../images/img/team_overlaying_img.png');
+    position: absolute;
+    bottom: -8%;
+    left: 3%;
+  }
+}
+
+.ACCORDEON {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.ACCORDEON__item {
+  position: relative;
+  text-align: center;
+  max-width: 23.5%;
+
+  &--active {
+    .ACCORDEON__item-title:after {
+      @include triangle(9px, 7px, $darkGreen, 'up');
+    }
+
+    .ACCORDEON__item-info {
+      height: initial;
+    }
+  }
+}
+
+.ACCORDEON__item-title {
+  font-size: 21px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 5px;
+  position: relative;
+  border: none;
+  background: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 4px;
+
+    @include triangle(9px, 7px, $darkGreen, 'down');
+  }
+}
+
+.ACCORDEON__item-avatar {
+  max-width: $teamAvatarWidth;
+  max-height: $teamAvatarHeight;
+  margin-bottom: 20px;
+}
+.ACCORDEON__item-avatar-img {
+  max-width: 100%;
+}
+
+.ACCORDEON__item-info {
+  width: 115%;
+  height: 0;
+  overflow: hidden;
+}
+.ACCORDEON__item-info-position {
+  color: #2a2323;
+}
+
+.ACCORDEON__item-info-text {
+  color: $biege;
+}

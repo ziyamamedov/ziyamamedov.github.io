@@ -22,7 +22,10 @@
             
             <div class="logo">
               <a href="#welcome" class="logo__link">
-                <img src="./images/logo.png" alt="" class="logo__img">
+                <!-- <img src="./images/logo.png" alt="" class="logo__img"> -->
+                <svg class="logo__icon">
+                  <use xlink:href='./svg/sprite.svg#logo'/>
+                </svg>
               </a>
             </div>
       
@@ -52,14 +55,19 @@
               </ul>
             </nav>
       
-            <a href="tel:88009039090" class="phone-number__link">8 800 903 90 90</a>
+              <a href="tel:88009039090" class="phone-number">
+                <svg class="phone-number__icon">
+                  <use xlink:href='./svg/sprite.svg#phone'></use>
+                </svg>
+                <span class="phone-number__text">8 800 903 90 90</span>
+              </a>
             
           </header><!--End of .header-->
     
           <main class="section-main-content">
             <div class="welcome__content">
       
-              <div class="section-title">Натуральные шоколадные батончики</div>
+              <h1 class="section-title">Натуральные шоколадные батончики</h1>
       
               <p class="welcome__content-text">
                 Наши батончики идеально подходят для тех, кто следит за своим здоровьем
@@ -73,15 +81,21 @@
       
               <ul class="specs">
                 <li class="specs__item">
-                  <img src="./images/icons/specs_icon_1.png" alt="иконка" class="specs__item-icon">
+                  <svg class="specs__item-icon">
+                    <use xlink:href='./svg/sprite.svg#leaf'/>
+                  </svg>
                   <div class="specs__item-info">100% натуральный продукт</div>
                 </li>
                 <li class="specs__item">
-                  <img src="./images/icons/specs_icon_2.png" alt="иконка" class="specs__item-icon">
+                  <svg class="specs__item-icon">
+                    <use xlink:href='./svg/sprite.svg#car'/>
+                  </svg>
                   <div class="specs__item-info">3-5 дней доставка по РФ</div>
                 </li>
                 <li class="specs__item">
-                  <img src="./images/icons/specs_icon_3.png" alt="иконка" class="specs__item-icon">
+                  <svg class="specs__item-icon">
+                    <use xlink:href='./svg/sprite.svg#meter'/>
+                  </svg>
                   <div class="specs__item-info">Не портит фигуру</div>
                 </li>
               </ul>
@@ -106,7 +120,9 @@
             <ul class="about__list">
               <li class="about__item benefit">
                 <div class="benefit__avatar">
-                  <img src="./images/icons/about_icon_1.png" alt="" class="benefit__avatar-img">
+                  <svg width='66' height='69' class="benefit__avatar-icon">
+                    <use xlink:href='./svg/sprite.svg#about_icon_1'/>
+                  </svg>
                 </div>
                 <h3 class="benefit__title">Полезно</h3>
                 <p class="benefit__text">
@@ -115,7 +131,9 @@
               </li>
               <li class="about__item benefit">
                 <div class="benefit__avatar">
-                  <img src="./images/icons/about_icon_2.png" alt="" class="benefit__avatar-img">
+                  <svg width='70' height='69' class="benefit__avatar-icon">
+                    <use xlink:href='./svg/sprite.svg#about_icon_2'/>
+                  </svg>
                 </div>
                 <h3 class="benefit__title">Вкусно</h3>
                 <p class="benefit__text">
@@ -124,7 +142,9 @@
               </li>
               <li class="about__item benefit">
                 <div class="benefit__avatar">
-                  <img src="./images/icons/about_icon_3.png" alt="" class="benefit__avatar-img">
+                  <svg width='75' height='64' class="benefit__avatar-icon">
+                    <use xlink:href='./svg/sprite.svg#about_icon_3'/>
+                  </svg>
                 </div>
                 <h3 class="benefit__title">Питательно</h3>
                 <p class="benefit__text">
@@ -145,7 +165,65 @@
 
       <section class="section team" id="team">
         <div class="container">
+          
           <h2 class="section-title">Команда</h2>
+
+          <ul class="ACCORDEON team__list">
+
+            <li class="ACCORDEON__item">
+              <div class="ACCORDEON__item-avatar">
+                <img src="./images/avatars/team_avatar_1.jpg" alt="фото борис" class="ACCORDEON__item-avatar-img">
+              </div>
+              <button type="button" class="ACCORDEON__item-title">Борис Федорович</button>
+              <div class="ACCORDEON__item-info">
+                <div class="ACCORDEON__item-info-position">Главный технолог</div>
+                <p class="ACCORDEON__item-info-text">
+                  Отвечает за вкусовые качества и калорийность.
+                </p>
+              </div>
+            </li>
+
+            <li class="ACCORDEON__item">
+              <div class="ACCORDEON__item-avatar">
+                <img src="./images/avatars/team_avatar_2.jpg" alt="фото Алла" class="ACCORDEON__item-avatar-img">
+              </div>
+              <button type="button" class="ACCORDEON__item-title">Алла Иванова</button>
+              <div class="ACCORDEON__item-info">
+                <div class="ACCORDEON__item-info-position">Специалист по упаковке</div>
+                <p class="ACCORDEON__item-info-text">
+                  Автор запоминающегося стиля наших батончиков.
+                </p>
+              </div>
+            </li>
+
+            <li class="ACCORDEON__item ACCORDEON__item--active">
+              <div class="ACCORDEON__item-avatar">
+                <img src="./images/avatars/team_avatar_3.jpg" alt="фото Кирилл" class="ACCORDEON__item-avatar-img">
+              </div>
+              <button type="button" class="ACCORDEON__item-title">Кирилл Матросов</button>
+              <div class="ACCORDEON__item-info">
+                <div class="ACCORDEON__item-info-position">Оператор</div>
+                <p class="ACCORDEON__item-info-text">
+                  С радостью поможет подобрать батончики и оформить заказ
+                </p>
+              </div>
+            </li>
+
+            <li class="ACCORDEON__item">
+              <div class="ACCORDEON__item-avatar">
+                <img src="./images/avatars/team_avatar_4.jpg" alt="фото Мила" class="ACCORDEON__item-avatar-img">
+              </div>
+              <button type="button" class="ACCORDEON__item-title">Мила Рыжкова</button>
+              <div class="ACCORDEON__item-info">
+                <div class="ACCORDEON__item-info-position">PR, маркетинг</div>
+                <p class="ACCORDEON__item-info-text">
+                  По всем вопросам сотрудничества и рекламы писать только Миле.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
         </div>
       </section>
 

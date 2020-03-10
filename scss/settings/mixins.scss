@@ -37,3 +37,34 @@
   border-radius: 50%;
   overflow: hidden;
 }
+
+//Миксин для создания треугольника
+@mixin triangle($width: 10px, $height: 10px, $color: $darkGreen, $direction: 'down') {
+    
+    height: 0;
+    width: 0;
+    border : $height solid transparent;
+    
+    @if $direction == 'down' {
+      border-right-width: $width / 2;
+      border-left-width: $width / 2;
+      border-top-color: $color;
+      border-bottom-width: 0;
+    } @else if $direction == 'up' {
+      border-right-width: $width / 2;
+      border-left-width: $width / 2;
+      border-bottom-color: $color;
+      border-top-width: 0;
+    } @else if $direction == 'right' {
+      border-top-width: $width / 2;
+      border-bottom-width: $width / 2;
+      border-left-color: $color;
+      border-right-width: 0;
+    } @else if $direction == 'left' {
+      border-top-width: $width / 2;
+      border-bottom-width: $width / 2;
+      border-right-color: $color;
+      border-left-width: 0;
+    }
+    
+}
