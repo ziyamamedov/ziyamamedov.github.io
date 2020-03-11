@@ -37,12 +37,14 @@ body{
   width: 95%;
   max-width: $container;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto 0 auto;
-  justify-content: center;
+  margin: 0 auto;
 }
 
+.container--vertical-align--center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .section {
   height : 100vh;

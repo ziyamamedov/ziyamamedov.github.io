@@ -4,12 +4,6 @@
   background-position: left center;
   position: relative;
 
-  .section-main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .section-title {
     margin-bottom: 8px;
   }
@@ -20,6 +14,12 @@
     left: 0;;
     top: 69%;
   }
+}
+
+.about__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about__slogan {
