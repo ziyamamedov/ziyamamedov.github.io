@@ -1,52 +1,3 @@
-//Миксин для создания font-face директив
-@mixin font-face($fw: '', $fs: '') {
-  $fow: normal;
-  $fos: normal;
-
-  $fPostScriptWeight:'Regular';
-  $fPostScriptSyle:'';
-
-  @if ($fw == 'black') {
-    $fow: 900;
-    $fPostScriptWeight:'Black';
-  } @else if ($fw == 'bold') {
-    $fow: bold;
-    $fPostScriptWeight:'Bold';
-  } @else if ($fw == 'extrabold') {
-    $fow: 800;
-    $fPostScriptWeight:'ExtraBold';
-  } @else if ($fw == 'medium') {
-    $fow: 500;
-    $fPostScriptWeight:'Medium';
-  } @else if ($fw == 'light') {
-    $fow: 300;
-    $fPostScriptWeight:'Light';
-  } @else if ($fw == 'thin') {
-    $fow: 100;
-    $fPostScriptWeight:'Thin';
-  }
-
-  @if ($fs == 'italic') {
-    $fos: italic;
-    $fPostScriptSyle:'Italic';
-    @if ($fw == '') {
-      $fPostScriptWeight:'';
-    }
-  }
-
-
-  @font-face {
-  font-family: 'alegreya_sans';
-  
-  src: 
-       local('Alegreya sans'),
-       local('AlegreyaSans-#{$fPostScriptWeight}#{$fPostScriptSyle}'),
-       url('../fonts/alegreyasans-#{$fw}#{$fs}-webfont.woff2') format('woff2'),
-       url('../fonts/alegreyasans-#{$fw}#{$fs}-webfont.woff') format('woff');
-  font-weight: $fow;
-  font-style: $fos;
-  }
-}
 
 //Миксин для создания круглого блока
 @mixin circle($width: 50px, $height: 50px) {
@@ -87,3 +38,37 @@
     
 }
 
+//Миксин для создания font-face директив
+@mixin font-face($fw: '', $fs: '') {
+  $fow: normal;
+  $fos: normal;
+
+  @if ($fw == 'Black') {
+    $fow: 900;
+  } @else if ($fw == 'Bold') {
+    $fow: bold;
+  } @else if ($fw == 'ExtraBold') {
+    $fow: 800;
+  } @else if ($fw == 'Medium') {
+    $fow: 500;
+  } @else if ($fw == 'Light') {
+    $fow: 300;
+  } @else if ($fw == 'Thin') {
+    $fow: 100;
+  }
+
+  @if ($fs == 'Italic') {
+    $fos: italic;
+    @if($fw == 'Regular') {
+      $fw: '';
+    }
+  }
+
+  @font-face {
+    font-family: 'Alegreya Sans';
+    src: url('../fonts/subset-AlegreyaSans-#{$fw}#{$fs}.woff2') format('woff2'),
+        url('../fonts/subset-AlegreyaSans-#{$fw}#{$fs}.woff') format('woff');
+    font-weight: $fow;
+    font-style: $fos;
+  }
+}

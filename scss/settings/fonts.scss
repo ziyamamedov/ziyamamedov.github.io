@@ -1,7 +1,8 @@
 
+
 //цикл для создания font-face директив
-@each $fw in ('black', 'bold', 'extrabold', 'light', 'medium', 'thin', '') {
-  @each $fs in('', 'italic') {
+@each $fw in ('Black', 'Bold', 'ExtraBold', 'Light', 'Medium', 'Regular', 'Thin') {
+  @each $fs in('', 'Italic') {
     @include font-face($fw, $fs);
   }
 }
