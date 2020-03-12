@@ -15,12 +15,16 @@ a {
   text-decoration: none;
 }
 
+html {
+  font-size: 16px;
+}
+
 html, body {
   height: 100%;
 }
 
 body{
-  font-family: 'Alegreya Sans', sans-serif;
+  font-family: 'alegreya_sans', sans-serif;
   font-size: 18px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
@@ -28,7 +32,6 @@ body{
 }
 
 .wrapper{
-  
   height: 100%;
 }
 
@@ -36,11 +39,12 @@ body{
 .container {
   width: 95%;
   max-width: $container;
-  height: 100%;
   margin: 0 auto;
+  height: 100%;
 }
 
 .container--vertical-align--center {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;

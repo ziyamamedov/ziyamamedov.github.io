@@ -21,20 +21,25 @@
 
 .reviews__frame {
   width: 100%;
-  background: url(../images/img/reviews_background.jpg) center center no-repeat;
-  position: relative;
-  margin-bottom: 21px;
-  overflow: hidden;
-  padding-top: 47px;
-  padding-left: 45px;
+  
+  
+  
 }
 
 .reviews__list {
+  width: 100%;
   display: flex;
+  
+  overflow: hidden;
+  margin-bottom: 21px;
 }
 
 .reviews__item {
   flex: 0 0 100%;
+  background: url(../images/img/reviews_background.jpg) center center no-repeat;
+  
+  padding-top: 3.3125rem;
+  padding-left: 2.9375rem;
 
   .review__avatar {
     margin-right: 17px;

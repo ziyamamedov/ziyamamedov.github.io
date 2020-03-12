@@ -3,27 +3,45 @@
   $fow: normal;
   $fos: normal;
 
+  $fPostScriptWeight:'Regular';
+  $fPostScriptSyle:'';
+
   @if ($fw == 'black') {
     $fow: 900;
+    $fPostScriptWeight:'Black';
   } @else if ($fw == 'bold') {
     $fow: bold;
+    $fPostScriptWeight:'Bold';
   } @else if ($fw == 'extrabold') {
     $fow: 800;
+    $fPostScriptWeight:'ExtraBold';
   } @else if ($fw == 'medium') {
     $fow: 500;
+    $fPostScriptWeight:'Medium';
   } @else if ($fw == 'light') {
     $fow: 300;
+    $fPostScriptWeight:'Light';
   } @else if ($fw == 'thin') {
     $fow: 100;
+    $fPostScriptWeight:'Thin';
   }
 
   @if ($fs == 'italic') {
     $fos: italic;
+    $fPostScriptSyle:'Italic';
+    @if ($fw == '') {
+      $fPostScriptWeight:'';
+    }
   }
+
 
   @font-face {
   font-family: 'alegreya_sans';
-  src: url('../fonts/alegreyasans-#{$fw}#{$fs}-webfont.woff2') format('woff2'),
+  
+  src: 
+       local('Alegreya sans'),
+       local('AlegreyaSans-#{$fPostScriptWeight}#{$fPostScriptSyle}'),
+       url('../fonts/alegreyasans-#{$fw}#{$fs}-webfont.woff2') format('woff2'),
        url('../fonts/alegreyasans-#{$fw}#{$fs}-webfont.woff') format('woff');
   font-weight: $fow;
   font-style: $fos;
@@ -68,3 +86,4 @@
     }
     
 }
+

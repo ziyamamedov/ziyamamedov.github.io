@@ -8,8 +8,8 @@
   .container {
     display: flex;
     justify-content: space-between;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 }
 
@@ -19,14 +19,16 @@
   fill:white;
 
 }
+.phone-number {
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
 
 .phone-number__icon {
   fill: white;
+  margin-right: 5px;
   width: 14px;
   height: 12px;
-}
-.phone-number {
-  padding-top: 2px;
-  color: white;
-  font-size: 24px;
 }

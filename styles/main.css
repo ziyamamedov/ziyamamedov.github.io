@@ -339,85 +339,85 @@ template {
 
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-black-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-black-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-Black"), url("../fonts/alegreyasans-black-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-black-webfont.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-blackitalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-blackitalic-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-BlackItalic"), url("../fonts/alegreyasans-blackitalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-blackitalic-webfont.woff") format("woff");
   font-weight: 900;
   font-style: italic;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-bold-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-bold-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-Bold"), url("../fonts/alegreyasans-bold-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-bold-webfont.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-bolditalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-bolditalic-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-BoldItalic"), url("../fonts/alegreyasans-bolditalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-bolditalic-webfont.woff") format("woff");
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-extrabold-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-extrabold-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-ExtraBold"), url("../fonts/alegreyasans-extrabold-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-extrabold-webfont.woff") format("woff");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-extrabolditalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-extrabolditalic-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-ExtraBoldItalic"), url("../fonts/alegreyasans-extrabolditalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-extrabolditalic-webfont.woff") format("woff");
   font-weight: 800;
   font-style: italic;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-light-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-light-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-Light"), url("../fonts/alegreyasans-light-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-light-webfont.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-lightitalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-lightitalic-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-LightItalic"), url("../fonts/alegreyasans-lightitalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-lightitalic-webfont.woff") format("woff");
   font-weight: 300;
   font-style: italic;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-medium-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-medium-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-Medium"), url("../fonts/alegreyasans-medium-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-medium-webfont.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-mediumitalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-mediumitalic-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-MediumItalic"), url("../fonts/alegreyasans-mediumitalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-mediumitalic-webfont.woff") format("woff");
   font-weight: 500;
   font-style: italic;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-thin-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-thin-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-Thin"), url("../fonts/alegreyasans-thin-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-thin-webfont.woff") format("woff");
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-thinitalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-thinitalic-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-ThinItalic"), url("../fonts/alegreyasans-thinitalic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-thinitalic-webfont.woff") format("woff");
   font-weight: 100;
   font-style: italic;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans--webfont.woff2") format("woff2"), url("../fonts/alegreyasans--webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-Regular"), url("../fonts/alegreyasans--webfont.woff2") format("woff2"), url("../fonts/alegreyasans--webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "alegreya_sans";
-  src: url("../fonts/alegreyasans-italic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-italic-webfont.woff") format("woff");
+  src: local("Alegreya sans"), local("AlegreyaSans-Italic"), url("../fonts/alegreyasans-italic-webfont.woff2") format("woff2"), url("../fonts/alegreyasans-italic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: italic;
 }
@@ -438,12 +438,16 @@ a {
   text-decoration: none;
 }
 
+html {
+  font-size: 16px;
+}
+
 html, body {
   height: 100%;
 }
 
 body {
-  font-family: "Alegreya Sans", sans-serif;
+  font-family: "alegreya_sans", sans-serif;
   font-size: 18px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
@@ -457,8 +461,8 @@ body {
 .container {
   width: 95%;
   max-width: 940px;
-  height: 100%;
   margin: 0 auto;
+  height: 100%;
 }
 
 .container--vertical-align--center {
@@ -474,7 +478,7 @@ body {
 }
 
 .section-title {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
   line-height: 1.2;
@@ -614,8 +618,8 @@ body {
 .header .container {
   display: flex;
   justify-content: space-between;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .logo__icon {
@@ -624,16 +628,18 @@ body {
   fill: white;
 }
 
-.phone-number__icon {
-  fill: white;
-  width: 14px;
-  height: 12px;
-}
-
 .phone-number {
-  padding-top: 2px;
   color: white;
   font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.phone-number__icon {
+  fill: white;
+  margin-right: 5px;
+  width: 14px;
+  height: 12px;
 }
 
 .nav {
@@ -705,7 +711,7 @@ body {
 .specs__item {
   display: flex;
   align-items: center;
-  margin-right: 4.3%;
+  margin-right: 3.5%;
 }
 .specs__item:last-child {
   margin-right: 0;
@@ -721,7 +727,7 @@ body {
 
 .specs__item-info {
   line-height: 1.3;
-  max-width: 85px;
+  max-width: 100px;
   z-index: 2;
 }
 
@@ -745,13 +751,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 57px;
 }
 
 .about__slogan {
   max-width: 45%;
   color: #666666;
   line-height: 1.2;
-  margin-bottom: 57px;
 }
 
 .about__list {
@@ -765,7 +771,7 @@ body {
   position: relative;
 }
 .about__item.benefit:before {
-  content: url("../images/img/about-list-decor.png");
+  content: url("../../images/img/about-list-decor.svg");
   position: absolute;
   top: 45px;
   left: -25%;
@@ -785,6 +791,7 @@ body {
   position: absolute;
   bottom: -8%;
   left: 3%;
+  z-index: 2;
 }
 
 .ACCORDEON {
@@ -860,6 +867,71 @@ body {
   color: #666666;
 }
 
+.menu {
+  background: url("../images/img/menu_background.jpg") center center/cover no-repeat;
+  color: #ffffff;
+}
+.menu .section-title {
+  position: absolute;
+  top: 13.5%;
+  left: 7%;
+}
+
+.menu__list {
+  display: flex;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.menu__item {
+  display: flex;
+}
+.menu__item--active .menu__item-content {
+  width: initial;
+}
+
+.menu__item--milk .menu__item-title {
+  background: url("../../images/img/menu_milk.jpg") center center/cover no-repeat;
+}
+
+.menu__item--honey .menu__item-title {
+  background: url("../../images/img/menu_honey.jpg") center center/cover no-repeat;
+}
+
+.menu__item--berries .menu__item-title {
+  background: url("../../images/img/menu_berries.jpg") center center/cover no-repeat;
+}
+
+.menu__item-title {
+  width: 6.25rem;
+  padding-left: 0.9375rem;
+  padding-bottom: 2.5rem;
+}
+.menu__item-title-text {
+  height: 100%;
+  font-size: 48px;
+  font-weight: bold;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+.menu__item-content {
+  max-width: 33.125rem;
+  font-size: 16px;
+  width: 0;
+  overflow: hidden;
+  background-color: rgba(51, 53, 55, 0.9);
+}
+.menu__item-content-text {
+  height: 100%;
+  max-width: 76%;
+  line-height: 1.5;
+  padding-top: 3rem;
+  padding-left: 1.5rem;
+}
+
 .reviews {
   position: relative;
 }
@@ -881,20 +953,20 @@ body {
 
 .reviews__frame {
   width: 100%;
-  background: url(../images/img/reviews_background.jpg) center center no-repeat;
-  position: relative;
-  margin-bottom: 21px;
-  overflow: hidden;
-  padding-top: 47px;
-  padding-left: 45px;
 }
 
 .reviews__list {
+  width: 100%;
   display: flex;
+  overflow: hidden;
+  margin-bottom: 21px;
 }
 
 .reviews__item {
   flex: 0 0 100%;
+  background: url(../images/img/reviews_background.jpg) center center no-repeat;
+  padding-top: 3.3125rem;
+  padding-left: 2.9375rem;
 }
 .reviews__item .review__avatar {
   margin-right: 17px;

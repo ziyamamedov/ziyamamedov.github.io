@@ -1,0 +1,71 @@
+.menu {
+  background: url('../images/img/menu_background.jpg') center center / cover no-repeat;
+  color: #ffffff;
+
+  .section-title {
+    position: absolute;
+    top: 13.5%;
+    left: 7%;
+  }
+}
+
+.menu__list {
+  display: flex;
+  max-height: 100%;
+  position: absolute;top: 0;
+  right: 0;
+}
+
+.menu__item {
+  display: flex;
+
+  &--active {
+    .menu__item-content {
+      width: initial;
+    }
+  }
+}
+
+@each $item in ('milk', 'honey', 'berries') {
+
+   .menu__item--#{$item} {
+     .menu__item-title{
+
+        background: url('../../images/img/menu_#{$item}.jpg') center center / cover no-repeat;
+
+   }   
+  }
+}
+
+
+.menu__item-title {
+  width: 6.25rem;
+  padding-left: 0.9375rem;
+  padding-bottom: 2.5rem;
+  &-text {
+    height: 100%;
+    font-size: 48px;
+    font-weight: bold;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
+}
+
+
+.menu__item-content {
+  max-width: 33.125rem;
+  font-size: 16px;
+  
+
+  width: 0;
+  overflow: hidden;
+  background-color: rgb(51, 53, 55, .9);
+  
+  &-text {
+    height: 100%;
+    max-width: 76%;
+    line-height: 1.5;
+    padding-top: 3rem;
+    padding-left: 1.5rem;
+  }
+}
