@@ -55,12 +55,13 @@
 .menu__item-content {
   max-width: 33.125rem;
   font-size: 16px;
-  
+  position: relative;
 
   width: 0;
   overflow: hidden;
   background-color: rgb(51, 53, 55, .9);
   
+
   &-text {
     height: 100%;
     max-width: 76%;
@@ -68,4 +69,29 @@
     padding-top: 3rem;
     padding-left: 1.5rem;
   }
+}
+
+
+
+.close-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 1.5625rem;
+  right: 1.875rem;
+
+  &:hover {
+    .close-btn__icon {
+      fill: white;
+    }
+  }
+}
+
+.close-btn__icon {
+  width: 20px;
+  height: 20px;
+  fill: #c2c3c4;
+  transition: fill .2s;
 }

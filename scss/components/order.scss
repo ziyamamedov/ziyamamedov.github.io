@@ -1,0 +1,146 @@
+.order {
+  background: url('../../images/img/patten.png') center center / cover no-repeat;
+
+  .section-title {
+    color: $darkGreen;
+    margin-bottom: 45px;
+  }
+}
+
+.order__form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__column {
+  width: calc(100% / 2 - 0.625rem);
+}
+
+.form__row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.form__label {
+  flex: 1;
+  margin-left: 1.3125rem;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+.form__label-title {
+  width: 100%;
+  color: $darkGreen;
+}
+.form__input-text, .form__textarea {
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  padding: 1.25rem 0.625rem;
+  border:none;
+  
+  &:focus {
+    outline: #dee2bd solid 3px;
+  }
+}
+
+.form__textarea {
+  resize: none;
+  height: 11.125rem;
+}
+
+//Оформление радиокнопок
+.form__row--radio {
+  justify-content: flex-start;
+}
+
+.form__radio-label {
+  display: flex;
+  align-items: center;
+  margin-right: 1.25rem;
+  cursor: pointer;
+}
+
+.form__input-radio {
+  display: none;
+  
+  &:checked + .form__radio-decor:before {
+    content: '';
+    width: 13px;
+    height: 13px;
+  }
+}
+
+.form__radio-decor {
+  @include circle(26px, 26px);
+  background-color: #fff;
+  margin-right: 10px;
+  position: relative;
+  flex: 0 0 26px;
+
+  &:before {
+    content: '';
+    @include circle(0, 0);
+    background-color: $darkGreen;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width .3s cubic-bezier(0.29, 2.9, 0.56,-0.04), height .3s cubic-bezier(0.29, 2.9, 0.56,-0.04);
+  }
+}
+
+//оформление чекбокса
+.form__label--checkbox {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.form__input-checkbox {
+  display: none;
+}
+
+.form__input-checkbox:checked + .form__checkbox-decor:before {
+  opacity: 1;
+}
+
+.form__checkbox-decor {
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  margin-right: 10px;
+
+  &:before {
+    content: url('../../svg/check.svg');
+   opacity: 0;
+   transition: opacity .3s;
+  }
+}
+
+//Оформление ряда submit
+
+.form__row--submit {
+  justify-content: flex-start;
+  align-items: center;
+
+  .button {
+    margin-right: 1.8125rem;
+  }
+}
+
+.reset_btn {
+  border: none;
+  background: none;
+  color: $darkGreen;
+  cursor: pointer;
+
+
+  &:hover {
+    color:black;
+  }
+}

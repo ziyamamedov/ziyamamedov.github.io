@@ -1,6 +1,7 @@
 .button {
   display: block;
   padding: 18px 34px 14px 34px;
+  border: none;
   border-radius: 19% / 50%;
   font-size: 19px;
   font-weight: 800;
@@ -8,7 +9,7 @@
   background-color: $darkGreen;
   color: white;
   transition: color .3s, background-color .3s;
-
+  cursor: pointer;
   &:hover, &--white {
     background-color: #fff;
     color: $darkGreen;

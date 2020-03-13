@@ -1,20 +1,24 @@
 .pagination {
   position: fixed;
 
-  top: 30%;
-  right: 4.1%;
+  top: 20%;
+  right: 3%;
 }
 
 .pagination__list {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .pagination__item {
-  margin-bottom: 5.5px;
-  &--active {
-    .pagination__link {
-      border: 1px solid #000000;
+  margin-bottom: 4px;
+
+  
+  &--active, &:hover {
+    .pagination__link:after {
+      width: 16px;
+      height: 16px;
     }
   }
 
@@ -22,10 +26,8 @@
 
 .pagination__link {
   display: block;
-  width: 16px;
-  height: 16px;
-  
-  border-radius: 50%;
+  width: 19px;
+  height: 19px;
   position: relative;
 
   &:before {
@@ -34,10 +36,21 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: #000;
+    background-color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  &:after {
+    content:'';
+    @include circle(0, 0);
+    border: 1px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s;
   }
 }
