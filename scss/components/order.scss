@@ -1,9 +1,16 @@
 .order {
-  background: url('../../images/img/patten.png') center center / cover no-repeat;
+  background: url('../images/img/patten.jpg') center center / cover no-repeat;
 
   .section-title {
     color: $darkGreen;
     margin-bottom: 45px;
+  }
+
+  &:before {
+    content:url('../../images/img/order_overlaying-img.png');
+    position: absolute;
+    right: 0;
+    top: -160px;
   }
 }
 

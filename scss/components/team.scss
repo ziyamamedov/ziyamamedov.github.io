@@ -1,11 +1,11 @@
 .team {
   .section-title {
-    margin-bottom: 48px;
+    margin-bottom: 5vh;
   }
   &:after {
     content: url('../images/img/team_overlaying_img.png');
     position: absolute;
-    bottom: -8%;
+    bottom: -3.125rem;
     left: 3%;
     z-index: 2;
   }
@@ -37,11 +37,11 @@
 }
 
 .ACCORDEON__item-title {
-  font-size: 21px;
+  font-size: 1.3125rem;
   font-weight: bold;
   outline: none;
   cursor: pointer;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
   position: relative;
   border: none;
   background: none;
@@ -62,6 +62,12 @@
   max-height: $teamAvatarHeight;
   margin-bottom: 1.25rem;
 }
+
+.ACCORDEON__item-avatar--drop {
+  height: 0;
+  overflow: hidden;
+}
+
 .ACCORDEON__item-avatar-img {
   max-width: 100%;
 }
@@ -77,4 +83,42 @@
 
 .ACCORDEON__item-info-text {
   color: $biege;
+}
+
+
+@media (max-width: 768px) {
+  .ACCORDEON {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ACCORDEON__item {
+    max-width: 35%;
+    margin-bottom: 1rem;
+  }
+
+  .ACCORDEON__item-avatar {
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  .ACCORDEON__item-title {
+    margin: 0;
+  }
+
+  .ACCORDEON__item--active {
+    .ACCORDEON__item-title {
+      margin-bottom: 1rem;
+    }
+    .ACCORDEON__item-avatar--drop {
+      height: 100%;
+      margin-bottom: 1.25rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .ACCORDEON__item {
+    max-width: 100%;
+  }
 }

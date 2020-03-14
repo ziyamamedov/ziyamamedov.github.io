@@ -455,6 +455,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+
 .wrapper {
   height: 100%;
 }
@@ -474,7 +484,7 @@ body {
 
 .section {
   height: 100vh;
-  min-height: 650px;
+  min-height: 550px;
   position: relative;
 }
 
@@ -486,6 +496,20 @@ body {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    max-width: 460px;
+  }
+}
 .button {
   display: block;
   padding: 18px 34px 14px 34px;
@@ -640,25 +664,44 @@ body {
 }
 
 .logo__icon {
-  width: 53px;
-  height: 39px;
+  width: 3.3125rem;
+  height: 2.4375rem;
   fill: white;
 }
 
 .phone-number {
   color: white;
-  font-size: 24px;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
 }
 
 .phone-number__icon {
   fill: white;
-  margin-right: 5px;
-  width: 14px;
-  height: 12px;
+  margin-right: 0.3125rem;
+  width: 0.875rem;
+  height: 0.75rem;
 }
 
+.hamburger {
+  display: none;
+}
+
+.hamburger__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: white;
+}
+
+@media (max-width: 768px) {
+  .phone-number {
+    display: none;
+  }
+
+  .hamburger {
+    display: initial;
+  }
+}
 .nav {
   display: flex;
   align-items: center;
@@ -676,10 +719,23 @@ body {
   color: white;
 }
 
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
 .welcome {
   color: white;
   background: url(../../images/img/welcome_background_2.png) 78% center/40% no-repeat, url(../images/img/welcome_background_1.png) right center/contain no-repeat, #86c3d7;
   position: relative;
+}
+@media screen and (max-width: 768px) {
+  .welcome {
+    background-image: url(../images/img/welcome_background_2_768.png), url(../images/img/welcome_background_1.png);
+    background-size: 50%, 65%;
+    background-position: center 17vh, right 9%;
+    padding-bottom: 7vh;
+  }
 }
 .welcome .container {
   position: relative;
@@ -687,7 +743,7 @@ body {
 .welcome .container:before {
   content: url("../../images/img/welcome_overlaying-img_2.png");
   position: absolute;
-  bottom: -55px;
+  bottom: -3.4375rem;
   left: 0;
 }
 .welcome .container:after {
@@ -697,28 +753,65 @@ body {
   bottom: -55px;
   right: 0;
 }
+@media screen and (max-width: 768px) {
+  .welcome .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .welcome .container:after {
+    content: none;
+  }
+  .welcome .container::before {
+    content: none;
+  }
+}
 
 .welcome__content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 380px;
-  margin-bottom: 60px;
+  max-width: 23.75rem;
+  margin-bottom: 3.75rem;
 }
 .welcome__content .section-title {
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
   text-align: left;
+  z-index: 2;
+}
+@media screen and (max-width: 768px) {
+  .welcome__content .section-title {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .welcome__content {
+    max-width: initial;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 
 .welcome__content-text {
-  font-size: 21px;
+  font-size: 1.3125rem;
   line-height: 1.26;
-  margin-bottom: 29px;
-  max-width: 345px;
+  margin-bottom: 1.8125rem;
+  max-width: 21.5625rem;
+}
+@media screen and (max-width: 768px) {
+  .welcome__content-text {
+    text-align: center;
+  }
 }
 
 .welcome__specs {
-  font-size: 16px;
+  font-size: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .welcome__specs {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .specs {
@@ -735,8 +828,8 @@ body {
 }
 
 .specs__item-icon {
-  width: 50px;
-  height: 42px;
+  width: 3.125rem;
+  height: 2.625rem;
   margin-right: 6%;
   z-index: 2;
   fill: #c6f7ff;
@@ -744,10 +837,19 @@ body {
 
 .specs__item-info {
   line-height: 1.3;
-  max-width: 100px;
+  max-width: 6.25rem;
   z-index: 2;
 }
 
+@media (max-width: 480px) {
+  .welcome__content {
+    padding-bottom: 0;
+  }
+
+  .welcome__specs {
+    display: none;
+  }
+}
 .about {
   text-align: center;
   background: url("../images/img/about-background.png") no-repeat;
@@ -801,12 +903,12 @@ body {
 }
 
 .team .section-title {
-  margin-bottom: 48px;
+  margin-bottom: 5vh;
 }
 .team:after {
   content: url("../images/img/team_overlaying_img.png");
   position: absolute;
-  bottom: -8%;
+  bottom: -3.125rem;
   left: 3%;
   z-index: 2;
 }
@@ -839,11 +941,11 @@ body {
 }
 
 .ACCORDEON__item-title {
-  font-size: 21px;
+  font-size: 1.3125rem;
   font-weight: bold;
   outline: none;
   cursor: pointer;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
   position: relative;
   border: none;
   background: none;
@@ -869,6 +971,11 @@ body {
   margin-bottom: 1.25rem;
 }
 
+.ACCORDEON__item-avatar--drop {
+  height: 0;
+  overflow: hidden;
+}
+
 .ACCORDEON__item-avatar-img {
   max-width: 100%;
 }
@@ -887,6 +994,40 @@ body {
   color: #666666;
 }
 
+@media (max-width: 768px) {
+  .ACCORDEON {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ACCORDEON__item {
+    max-width: 35%;
+    margin-bottom: 1rem;
+  }
+
+  .ACCORDEON__item-avatar {
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .ACCORDEON__item-title {
+    margin: 0;
+  }
+
+  .ACCORDEON__item--active .ACCORDEON__item-title {
+    margin-bottom: 1rem;
+  }
+  .ACCORDEON__item--active .ACCORDEON__item-avatar--drop {
+    height: 100%;
+    margin-bottom: 1.25rem;
+  }
+}
+@media (max-width: 480px) {
+  .ACCORDEON__item {
+    max-width: 100%;
+  }
+}
 .menu {
   background: url("../images/img/menu_background.jpg") center center/cover no-repeat;
   color: #ffffff;
@@ -1048,11 +1189,17 @@ body {
 }
 
 .order {
-  background: url("../../images/img/patten.png") center center/cover no-repeat;
+  background: url("../images/img/patten.jpg") center center/cover no-repeat;
 }
 .order .section-title {
   color: #365a49;
   margin-bottom: 45px;
+}
+.order:before {
+  content: url("../../images/img/order_overlaying-img.png");
+  position: absolute;
+  right: 0;
+  top: -160px;
 }
 
 .order__form {

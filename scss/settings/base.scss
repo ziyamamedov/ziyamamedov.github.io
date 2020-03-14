@@ -31,6 +31,17 @@ body{
   -moz-osx-font-smoothing: grayscale;
 }
 
+button{
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  &:focus{
+    outline: none;
+  }
+
+}
+
 .wrapper{
   height: 100%;
 }
@@ -44,7 +55,6 @@ body{
 }
 
 .container--vertical-align--center {
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,7 +62,7 @@ body{
 
 .section {
   height : 100vh;
-  min-height: 650px;
+  min-height: 550px;
   position: relative;
 }
 
@@ -62,4 +72,21 @@ body{
   text-transform: uppercase;
   line-height: 1.2;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    max-width: 460px;
+  }
 }
