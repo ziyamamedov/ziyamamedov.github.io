@@ -67,6 +67,10 @@
     justify-content: flex-end;
     align-items: center;
   }
+
+  @include phones {
+    padding-bottom: 0;
+  }
 }
 
 .welcome__content-text {
@@ -86,6 +90,10 @@
   @include tablets {
     display: flex;
     justify-content: center;
+  }
+
+  @include phones {
+    display: none;
   }
 }
 
@@ -113,17 +121,4 @@
   line-height: 1.3;
   max-width: 6.25rem;
   z-index: 2;
-}
-
-
-
-@media (max-width: 480px) {
-
-  .welcome__content {
-    padding-bottom: 0;
-  }
-
-  .welcome__specs {
-    display: none;
-  }
 }

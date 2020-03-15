@@ -9,6 +9,14 @@
     display: flex;
     justify-content: space-between;
     padding: 1.25rem 0;
+
+    @include phones {
+      flex-direction: column;
+      align-items: center;
+
+      padding-bottom: 1.875rem;
+    }
+
   }
   .phone-number {
     color: $darkGreen;
@@ -18,9 +26,21 @@
         fill: #000;
       }
     }
+
+    @include tablets {
+      display: initial;
+    }
   }
   .phone-number__icon {
     fill: $darkGreen;
+  }
+}
+
+.footer__left {
+  @include phones {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.625rem;
   }
 }
 
@@ -28,6 +48,11 @@
   display: flex;
   align-items: center;
   font-size: 0;
+
+  @include phones {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .socials {
@@ -39,6 +64,10 @@
   &:first-child {
     margin-left: 0;
   }
+}
+
+.socials__item-link {
+  display: flex;
 }
 
 .socials__item-icon {

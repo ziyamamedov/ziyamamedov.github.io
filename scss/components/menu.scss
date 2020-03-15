@@ -12,42 +12,69 @@
 .menu__list {
   display: flex;
   max-height: 100%;
-  position: absolute;top: 0;
+  position: absolute;
+  top: 0;
   right: 0;
 }
 
 .menu__item {
   display: flex;
+  position: relative;
 
   &--active {
     .menu__item-content {
-      width: initial;
+      width: 49vw;
+    }
+
+    @include phones {
+      
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+      width: 100vw;
     }
   }
 }
 
+//Фоновые картинки заголовкам меню
 @each $item in ('milk', 'honey', 'berries') {
-
+  
    .menu__item--#{$item} {
-     .menu__item-title{
-
+     .menu__item-title {
         background: url('../../images/img/menu_#{$item}.jpg') center center / cover no-repeat;
-
-   }   
-  }
+      }   
+    }
 }
 
 
 .menu__item-title {
-  width: 6.25rem;
-  padding-left: 0.9375rem;
   padding-bottom: 2.5rem;
+  color: #ffffff;
+  display: block;
+
   &-text {
+    display: flex;
+    align-items: center;
+    width: 6.25rem;
     height: 100%;
+
     font-size: 48px;
     font-weight: bold;
+    line-height: 1;
+
     writing-mode: vertical-lr;
     transform: rotate(180deg);
+    
+    @include tablets {
+      width: 5rem;
+    }
+
+    @include phones {
+      width: initial;
+      min-width: 4rem;
+    }
   }
 }
 
@@ -61,17 +88,31 @@
   overflow: hidden;
   background-color: rgb(51, 53, 55, .9);
   
+  transition: width 1s;
 
   &-text {
     height: 100%;
-    max-width: 76%;
+    width: 23.75rem;
     line-height: 1.5;
     padding-top: 3rem;
-    padding-left: 1.5rem;
+    padding-left: 5%;
+
+    @include tablets {
+      width: 12.5rem;
+    }
+
+    @include phones {
+      width: 15.625rem;
+    }
+  }
+
+  @include phones {
+    flex: 1;
   }
 }
 
 
+//Кнопка закрыть
 
 .close-btn {
   border: none;
@@ -82,11 +123,12 @@
   top: 1.5625rem;
   right: 1.875rem;
 
-  &:hover {
-    .close-btn__icon {
-      fill: white;
-    }
+  display: none;
+
+  @include tablets {
+    display: initial;
   }
+
 }
 
 .close-btn__icon {

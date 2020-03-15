@@ -1,9 +1,20 @@
 .order {
   background: url('../images/img/patten.jpg') center center / cover no-repeat;
 
+  .container {
+    @include tablets {
+      width: 75%;
+    }
+
+    @include phones {
+      width: 95%;
+    }
+  }
+
   .section-title {
     color: $darkGreen;
-    margin-bottom: 45px;
+    margin-bottom: 2.8125rem;
+    z-index: 2;
   }
 
   &:before {
@@ -17,10 +28,19 @@
 .order__form {
   display: flex;
   justify-content: space-between;
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .form__column {
   width: calc(100% / 2 - 0.625rem);
+  
+  @include tablets {
+    width: 100%;
+  }
 }
 
 .form__row {
@@ -52,16 +72,29 @@
   &:focus {
     outline: #dee2bd solid 3px;
   }
+
+  @include tablets {
+    padding: 10px 0.9375rem;
+  }
+
 }
 
 .form__textarea {
   resize: none;
   height: 11.125rem;
+
+  @include tablets {
+    height: 5.0625rem;
+  }
 }
 
 //Оформление радиокнопок
 .form__row--radio {
   justify-content: flex-start;
+
+  @include phones {
+    justify-content: center;
+  }
 }
 
 .form__radio-label {
@@ -101,6 +134,12 @@
 }
 
 //оформление чекбокса
+.form__row--checkbox {
+  @include phones {
+    justify-content: center;
+  }
+}
+
 .form__label--checkbox {
   flex: 0.5;
   display: flex;
@@ -137,6 +176,10 @@
 
   .button {
     margin-right: 1.8125rem;
+  }
+
+  @include tablets {
+    justify-content: center;
   }
 }
 

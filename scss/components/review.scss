@@ -1,5 +1,10 @@
 .review {
   display: flex;
+  
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .review__avatar {
@@ -8,6 +13,11 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  @include tablets {
+    width: 131px;
+    height: 8.3125rem;
+  }
 }
 
 .review__avatar-img {
@@ -17,7 +27,13 @@
 .review__content {
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
+  padding-top: 2%;
+
+  @include tablets {
+    text-align: center;
+    padding-right: 2%;
+    padding-left: 2%;
+  }
 }
 
 .review__title {
