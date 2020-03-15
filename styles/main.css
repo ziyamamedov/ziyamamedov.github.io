@@ -466,6 +466,7 @@ button:focus {
 }
 
 .wrapper {
+  min-height: 100%;
   overflow: hidden;
 }
 
@@ -517,10 +518,10 @@ button:focus {
 }
 .button {
   display: block;
-  padding: 18px 34px 14px 34px;
+  padding: 1.125rem 2.125rem 0.875rem 2.125rem;
   border: none;
   border-radius: 19%/50%;
-  font-size: 19px;
+  font-size: 1.1875rem;
   font-weight: 800;
   text-transform: uppercase;
   background-color: #365a49;
@@ -541,6 +542,11 @@ button:focus {
   position: fixed;
   top: 20%;
   right: 3%;
+}
+@media screen and (max-width: 768px) {
+  .pagination {
+    display: none;
+  }
 }
 
 .pagination__list {
@@ -653,7 +659,7 @@ button:focus {
 }
 @media screen and (max-width: 768px) {
   .review__avatar {
-    width: 131px;
+    width: 8.1875rem;
     height: 8.3125rem;
   }
 }
@@ -676,14 +682,14 @@ button:focus {
 }
 
 .review__title {
-  font-size: 30px;
-  margin-bottom: 18px;
+  font-size: 1.875rem;
+  margin-bottom: 1.125rem;
 }
 
 .review__text {
   color: #666666;
   line-height: 1.2;
-  margin-bottom: 25px;
+  margin-bottom: 1.5625rem;
 }
 
 .header {
@@ -758,7 +764,31 @@ button:focus {
 
 @media (max-width: 768px) {
   .nav {
-    display: none;
+    background-color: rgba(51, 53, 55, 0.9);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    font-size: 2.25rem;
+    width: 0;
+    overflow: hidden;
+    transition: width 1s;
+  }
+
+  .nav--active {
+    width: 100vw;
+  }
+
+  .nav__list {
+    height: 29.375rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav__link {
+    display: block;
+    text-align: center;
+    min-width: 17.1875rem;
   }
 }
 .welcome {
@@ -895,7 +925,7 @@ button:focus {
   position: relative;
 }
 .about .section-title {
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 .about:after {
   content: url("../images/img/about_overlaying-img.png");
@@ -945,7 +975,7 @@ button:focus {
 .about__item.benefit:before {
   content: url("../../images/img/about-list-decor.svg");
   position: absolute;
-  top: 45px;
+  top: 2.8125rem;
   left: -25%;
 }
 @media screen and (max-width: 768px) {
@@ -1006,7 +1036,6 @@ button:focus {
 .accordeon__item--active .accordeon__item-title:after {
   transform-origin: center 25%;
   transform: rotate(180deg);
-  transition: transform 0.3s;
 }
 @media screen and (max-width: 768px) {
   .accordeon__item--active .accordeon__item-avatar {
@@ -1015,7 +1044,7 @@ button:focus {
   }
 }
 .accordeon__item--active .accordeon__item-info {
-  height: initial;
+  height: 100%;
 }
 .accordeon__item:last-child {
   padding-right: 0;
@@ -1048,6 +1077,7 @@ button:focus {
   top: 50%;
   transform: translateY(-50%);
   margin-left: 4px;
+  transition: transform 0.3s;
   height: 0;
   width: 0;
   border: 7px solid transparent;
@@ -1081,10 +1111,15 @@ button:focus {
   max-width: 100%;
 }
 
+.accordeon__item-info-wrapper {
+  height: 7.8125rem;
+}
+
 .accordeon__item-info {
   width: 100%;
   height: 0;
   overflow: hidden;
+  transition: height 0.3s;
 }
 @media screen and (max-width: 768px) {
   .accordeon__item-info {
@@ -1117,13 +1152,32 @@ button:focus {
   top: 0;
   right: 0;
 }
+@media screen and (max-width: 768px) {
+  .menu__list--active {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
 
 .menu__item {
   display: flex;
+  justify-content: flex-end;
   position: relative;
 }
 .menu__item--active .menu__item-content {
   width: 49vw;
+}
+@media screen and (max-width: 768px) {
+  .menu__item--active .menu__item-content {
+    flex: 1;
+    transition: flex 1s width 1s;
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu__item--active {
+    flex: 1;
+    transition: flex 1s;
+  }
 }
 @media screen and (max-width: 480px) {
   .menu__item--active {
@@ -1187,10 +1241,10 @@ button:focus {
 }
 .menu__item-content-text {
   height: 100%;
-  width: 23.75rem;
+  max-width: 23.75rem;
   line-height: 1.5;
   padding-top: 3rem;
-  padding-left: 5%;
+  padding-left: 1.5625rem;
 }
 @media screen and (max-width: 768px) {
   .menu__item-content-text {
@@ -1269,7 +1323,7 @@ button:focus {
   width: 100%;
   display: flex;
   overflow: hidden;
-  margin-bottom: 21px;
+  margin-bottom: 1.3125rem;
 }
 
 .reviews__item {
@@ -1282,8 +1336,8 @@ button:focus {
 .reviews__item:before {
   content: "";
   display: block;
-  width: 90px;
-  height: 90px;
+  width: 5.625rem;
+  height: 5.625rem;
   border-radius: 50%;
   overflow: hidden;
   background-color: #fff;
@@ -1378,7 +1432,7 @@ button:focus {
   content: url("../../images/img/order_overlaying-img.png");
   position: absolute;
   right: 0;
-  top: -160px;
+  top: -10rem;
 }
 
 .order__form {
@@ -1404,7 +1458,7 @@ button:focus {
 .form__row {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 0.9375rem;
 }
 .form__row:first-child {
   margin-top: 0;
@@ -1434,7 +1488,7 @@ button:focus {
 }
 @media screen and (max-width: 768px) {
   .form__input-text, .form__textarea {
-    padding: 10px 0.9375rem;
+    padding: 0.625rem 0.9375rem;
   }
 }
 
@@ -1469,19 +1523,19 @@ button:focus {
 }
 .form__input-radio:checked + .form__radio-decor:before {
   content: "";
-  width: 13px;
-  height: 13px;
+  width: 0.8125rem;
+  height: 0.8125rem;
 }
 
 .form__radio-decor {
-  width: 26px;
-  height: 26px;
+  width: 1.625rem;
+  height: 1.625rem;
   border-radius: 50%;
   overflow: hidden;
   background-color: #fff;
-  margin-right: 10px;
+  margin-right: 0.625rem;
   position: relative;
-  flex: 0 0 26px;
+  flex-shrink: 0;
 }
 .form__radio-decor:before {
   content: "";
@@ -1520,10 +1574,10 @@ button:focus {
 
 .form__checkbox-decor {
   display: inline-flex;
-  width: 26px;
-  height: 26px;
+  width: 1.625rem;
+  height: 1.625rem;
   background-color: #fff;
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 .form__checkbox-decor:before {
   content: url("../../svg/check.svg");

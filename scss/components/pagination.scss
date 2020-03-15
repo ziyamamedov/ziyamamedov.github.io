@@ -3,6 +3,10 @@
 
   top: 20%;
   right: 3%;
+
+  @include tablets {
+    display: none;
+  }
 }
 
 .pagination__list {
@@ -54,3 +58,4 @@
     transition: .2s;
   }
 }
+

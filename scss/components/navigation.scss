@@ -17,7 +17,32 @@
 
 @media (max-width: 768px) {
   .nav {
-    display: none;
+    background-color: rgba(51, 53, 55, .9);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    
+    font-size: 2.25rem;
+    width: 0;
+    overflow: hidden;
+    transition: width 1s;
   }
 
+  .nav--active {
+    width: 100vw;
+  }
+
+  .nav__list {
+    height: 29.375rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav__link {
+    display: block;
+    text-align: center;
+    min-width: 17.1875rem;
+  }
 }

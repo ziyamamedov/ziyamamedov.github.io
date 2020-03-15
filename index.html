@@ -21,8 +21,11 @@
               <use xlink:href='./svg/sprite.svg#logo'/>
             </svg>
         </div>
-  
-        <nav class="nav">
+        
+        <!--Для открытия гамбургер-меню, 
+          добавить класс nav--active к тегу nav
+        работатет только в размере экрана меньше 768px-->
+        <nav class="nav nav--active"> 
           <ul class="nav__list">
             <li class="nav__item">
               <a href="#about" class="nav__link">О нас</a>
@@ -45,6 +48,12 @@
             <li class="nav__item">
               <a href="#contacts" class="nav__link">Контакты</a>
             </li>
+
+            <button class="close-btn">
+              <svg class="close-btn__icon">
+                <use xlink:href='./svg/sprite.svg#closeBtn'></use>
+              </svg>
+            </button>
           </ul>
         </nav>
   
@@ -201,12 +210,15 @@
 
               <button type="button" class="accordeon__item-title">Борис Федорович</button>
               
-              <div class="accordeon__item-info">
-                <div class="accordeon__item-info-position">Главный технолог</div>
-                <p class="accordeon__item-info-text">
-                  Отвечает за вкусовые качества и калорийность.
-                </p>
+              <div class='accordeon__item-info-wrapper'>
+                <div class="accordeon__item-info">
+                  <div class="accordeon__item-info-position">Главный технолог</div>
+                  <p class="accordeon__item-info-text">
+                    Отвечает за вкусовые качества и калорийность.
+                  </p>
+                </div>
               </div>
+
             </li>
 
             <li class="accordeon__item">
@@ -217,12 +229,15 @@
 
               <button type="button" class="accordeon__item-title">Алла Иванова</button>
                             
-              <div class="accordeon__item-info">
-                <div class="accordeon__item-info-position">Специалист по упаковке</div>
-                <p class="accordeon__item-info-text">
-                  Автор запоминающегося стиля наших батончиков.
-                </p>
+              <div class='accordeon__item-info-wrapper'>
+                <div class="accordeon__item-info">
+                  <div class="accordeon__item-info-position">Специалист по упаковке</div>
+                  <p class="accordeon__item-info-text">
+                    Автор запоминающегося стиля наших батончиков.
+                  </p>
+                </div>
               </div>
+
             </li>
 
             <li class="accordeon__item">
@@ -233,12 +248,15 @@
 
               <button type="button" class="accordeon__item-title">Кирилл Матросов</button>
 
-              <div class="accordeon__item-info">
-                <div class="accordeon__item-info-position">Оператор</div>
-                <p class="accordeon__item-info-text">
-                  С радостью поможет подобрать батончики и оформить заказ
-                </p>
+              <div class='accordeon__item-info-wrapper'>
+                <div class="accordeon__item-info">
+                  <div class="accordeon__item-info-position">Оператор</div>
+                  <p class="accordeon__item-info-text">
+                    С радостью поможет подобрать батончики и оформить заказ
+                  </p>
+                </div>
               </div>
+
             </li>
 
             <li class="accordeon__item accordeon__item--active">
@@ -249,12 +267,15 @@
 
               <button type="button" class="accordeon__item-title">Мила Рыжкова</button>
 
-              <div class="accordeon__item-info">
-                <div class="accordeon__item-info-position">PR, маркетинг</div>
-                <p class="accordeon__item-info-text">
-                  По всем вопросам сотрудничества и рекламы писать только Миле.
-                </p>
+              <div class='accordeon__item-info-wrapper'>
+                <div class="accordeon__item-info">
+                  <div class="accordeon__item-info-position">PR, маркетинг</div>
+                  <p class="accordeon__item-info-text">
+                    По всем вопросам сотрудничества и рекламы писать только Миле.
+                  </p>
+                </div>
               </div>
+              
             </li>
 
           </ul>
@@ -267,7 +288,7 @@
         
         <h2 class="section-title">Меню</h2>
 
-        <ul class="menu__list">
+        <ul class="menu__list menu__list--active">
 
           <li class="menu__item menu__item--active menu__item--milk">
             <a href='#' class="menu__item-title">
@@ -460,7 +481,7 @@
               </div>
 
             </div> <!--End of .form__column-->
-            
+
             <div class="form__column">
 
               <div class="form__row">

@@ -15,7 +15,7 @@
   overflow: hidden;
 
   @include tablets {
-    width: 131px;
+    width: 8.1875rem;
     height: 8.3125rem;
   }
 }
@@ -37,12 +37,12 @@
 }
 
 .review__title {
-  font-size: 30px;
-  margin-bottom: 18px;
+  font-size: 1.875rem;
+  margin-bottom: 1.125rem;
 }
 
 .review__text {
   color: $biege;
   line-height: 1.2;
-  margin-bottom: 25px;
+  margin-bottom: 1.5625rem;
 }

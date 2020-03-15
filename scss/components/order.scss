@@ -21,7 +21,7 @@
     content:url('../../images/img/order_overlaying-img.png');
     position: absolute;
     right: 0;
-    top: -160px;
+    top: -10rem;
   }
 }
 
@@ -46,7 +46,7 @@
 .form__row {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 0.9375rem;
   &:first-child {
     margin-top: 0;
   }
@@ -74,7 +74,7 @@
   }
 
   @include tablets {
-    padding: 10px 0.9375rem;
+    padding: 0.625rem 0.9375rem;
   }
 
 }
@@ -109,17 +109,17 @@
   
   &:checked + .form__radio-decor:before {
     content: '';
-    width: 13px;
-    height: 13px;
+    width: 0.8125rem;
+    height: 0.8125rem;
   }
 }
 
 .form__radio-decor {
-  @include circle(26px, 26px);
+  @include circle(1.625rem, 1.625rem);
   background-color: #fff;
-  margin-right: 10px;
+  margin-right: 0.625rem;
   position: relative;
-  flex: 0 0 26px;
+  flex-shrink: 0;
 
   &:before {
     content: '';
@@ -156,10 +156,10 @@
 
 .form__checkbox-decor {
   display: inline-flex;
-  width: 26px;
-  height: 26px;
+  width: 1.625rem;
+  height: 1.625rem;
   background-color: #fff;
-  margin-right: 10px;
+  margin-right: 0.625rem;
 
   &:before {
     content: url('../../svg/check.svg');

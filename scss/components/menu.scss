@@ -15,19 +15,38 @@
   position: absolute;
   top: 0;
   right: 0;
+
+  &--active {
+    @include tablets {
+      width: 100%;
+      justify-content: flex-end;
+    }
+    
+  }
 }
 
 .menu__item {
   display: flex;
+  justify-content: flex-end;
   position: relative;
 
   &--active {
     .menu__item-content {
       width: 49vw;
+      @include tablets {
+        flex: 1;
+        transition: flex 1s width 1s;
+      }
+
+      
+    }
+
+    @include tablets {
+      flex: 1;
+      transition: flex 1s;
     }
 
     @include phones {
-      
       position: absolute;
       right: 0;
       top: 0;
@@ -92,10 +111,10 @@
 
   &-text {
     height: 100%;
-    width: 23.75rem;
+    max-width: 23.75rem;
     line-height: 1.5;
     padding-top: 3rem;
-    padding-left: 5%;
+    padding-left: 1.5625rem;
 
     @include tablets {
       width: 12.5rem;
