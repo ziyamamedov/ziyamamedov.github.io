@@ -114,8 +114,12 @@
 }
 
 .accordeon__item-info-wrapper {
-
   height: 7.8125rem;
+
+  @include tablets {
+    height: auto;
+    order: 3;
+  }
 }
 
 .accordeon__item-info {
@@ -124,11 +128,8 @@
   overflow: hidden;
 
   transition: height .3s;
-  
-  @include tablets {
-    order: 3;
-  }
 }
+
 .accordeon__item-info-position {
   color: #2a2323;
 }
