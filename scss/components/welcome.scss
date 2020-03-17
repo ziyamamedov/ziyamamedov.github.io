@@ -7,9 +7,14 @@
 
   @include tablets {
     background-image: url(../images/img/welcome_background_2_768.png), url(../images/img/welcome_background_1.png);
-    background-size: 50%, 65%;
-    background-position: center 17vh, right 9%;
+    background-size: 60%, 65%;
+    background-position: center 8vh, right 3%;
     padding-bottom: 7vh;
+  }
+
+  @include phones {
+    background-size: 73%;
+    background-position: center 7vh, right 3%;
   }
 
   .container {

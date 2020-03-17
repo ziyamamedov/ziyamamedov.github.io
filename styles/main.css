@@ -799,9 +799,15 @@ button:focus {
 @media screen and (max-width: 768px) {
   .welcome {
     background-image: url(../images/img/welcome_background_2_768.png), url(../images/img/welcome_background_1.png);
-    background-size: 50%, 65%;
-    background-position: center 17vh, right 9%;
+    background-size: 60%, 65%;
+    background-position: center 8vh, right 3%;
     padding-bottom: 7vh;
+  }
+}
+@media screen and (max-width: 480px) {
+  .welcome {
+    background-size: 73%;
+    background-position: center 7vh, right 3%;
   }
 }
 .welcome .container {
@@ -1242,20 +1248,10 @@ button:focus {
 }
 .menu__item-content-text {
   height: 100%;
-  max-width: 23.75rem;
   line-height: 1.5;
   padding-top: 3rem;
   padding-left: 1.5625rem;
-}
-@media screen and (max-width: 768px) {
-  .menu__item-content-text {
-    width: 12.5rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .menu__item-content-text {
-    width: 15.625rem;
-  }
+  padding-right: 3.375rem;
 }
 @media screen and (max-width: 480px) {
   .menu__item-content {
