@@ -21,7 +21,8 @@
     content:url('../../images/img/order_overlaying-img.png');
     position: absolute;
     right: 0;
-    top: -10rem;
+    top: 0;
+    transform: translateY(-50%);
   }
 }
 

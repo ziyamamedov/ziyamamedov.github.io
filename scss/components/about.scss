@@ -12,7 +12,9 @@
     content: url('../images/img/about_overlaying-img.png');
     position: absolute;
     left: 0;;
-    top: 69%;
+    bottom: 0;
+    transform: translateY(50%);
+    z-index: 10;
 
     @include tablets {
       top: 80%;

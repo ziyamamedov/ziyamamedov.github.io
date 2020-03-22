@@ -17,17 +17,18 @@
 
 @media (max-width: 768px) {
   .nav {
+    width: 0;
     background-color: rgba(51, 53, 55, .9);
 
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
     
     font-size: 2.25rem;
-    width: 0;
+    
     overflow: hidden;
-    transition: width 1s;
+    transition: width .3s;
   }
 
   .nav--active {

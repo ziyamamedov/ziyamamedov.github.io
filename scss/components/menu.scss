@@ -134,9 +134,8 @@
   position: absolute;
   top: 1.5625rem;
   right: 1.875rem;
-
   display: none;
-
+  
   @include tablets {
     display: initial;
   }

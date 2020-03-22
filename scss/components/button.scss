@@ -1,15 +1,20 @@
 .button {
   display: block;
+  background-color: $darkGreen;
   padding: 1.125rem 2.125rem 0.875rem 2.125rem;
   border: none;
   border-radius: 19% / 50%;
+
   font-size: 1.1875rem;
   font-weight: 800;
   text-transform: uppercase;
-  background-color: $darkGreen;
   color: white;
+
+  
   transition: color .3s, background-color .3s;
   cursor: pointer;
+  z-index: 2;
+
   &:hover, &--white {
     background-color: #fff;
     color: $darkGreen;

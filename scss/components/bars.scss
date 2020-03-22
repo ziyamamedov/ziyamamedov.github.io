@@ -1,0 +1,83 @@
+
+.bars {
+  background-color: #f8faf9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .container {
+    margin: 0 ;
+
+    @include tablets {
+      max-width: 570px;
+    }
+
+    @include phones {
+      max-width: 380px;
+    }
+    
+  }
+
+  &:after {
+    content: '';
+    width: 196px;
+    height: 28.75rem;
+    background: url(../../images/img/bars_overlaying_img.png) center center / contain no-repeat;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(50%);
+
+    @include tablets {
+      width: 9.0625rem;
+    }
+    
+  }
+}
+
+.bars__slider {
+  display: flex;
+  align-items: center;
+}
+.bars__slider-arrow-wrapper {
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bars__slider-arrow {
+  display: flex;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+
+  &--left {
+    justify-content: flex-end;
+  }
+
+  @include tablets {
+    align-items: flex-start;
+    padding-top: 82%;
+  }
+  
+}
+.bars__slider-arrow-svg {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+  fill-rule: evenodd;
+  width: 17px;
+  height: 32px;
+}
+
+.bars__slider-item {
+  display: flex;
+  align-items: center;
+
+  @include tablets {
+    
+    flex-direction: column;
+    align-items: center;
+  }
+}

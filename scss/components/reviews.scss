@@ -12,8 +12,9 @@
     width: 8.6875rem;
     height: 20.0625rem;
     position: absolute;
-    bottom: -10%;
+    bottom: 0;
     left: 0;
+    transform: translateY(50%);
 
     @include tablets {
       width: calc(8.6875rem * 0.7);
