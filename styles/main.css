@@ -1343,12 +1343,9 @@ button:focus {
 }
 @media screen and (max-width: 768px) {
   .accordeon__item--active .accordeon__item-avatar {
-    height: auto;
+    height: 100%;
     margin-bottom: 1.25rem;
   }
-}
-.accordeon__item--active .accordeon__item-info {
-  height: 100%;
 }
 .accordeon__item:last-child {
   padding-right: 0;
@@ -1374,6 +1371,7 @@ button:focus {
   position: relative;
   border: none;
   background: none;
+  transition: margin-bottom 0.3s;
 }
 .accordeon__item-title:after {
   content: "";
@@ -1404,31 +1402,21 @@ button:focus {
 }
 @media screen and (max-width: 768px) {
   .accordeon__item-avatar {
-    order: 2;
-    height: 0;
-    overflow: hidden;
     margin-bottom: 0;
   }
 }
 
 .accordeon__item-avatar-img {
   max-width: 100%;
-}
-
-.accordeon__item-info-wrapper {
-  height: 7.8125rem;
-}
-@media screen and (max-width: 768px) {
-  .accordeon__item-info-wrapper {
-    height: auto;
-    order: 3;
-  }
+  max-height: 100%;
 }
 
 .accordeon__item-info {
   width: 100%;
-  height: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: height 0.3s;
 }
 
