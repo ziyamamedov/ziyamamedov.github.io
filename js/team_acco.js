@@ -1,85 +1,85 @@
+//Создание объекта с элементами аккордеона
+var accoItems = {
+  self: document.querySelectorAll('.accordeon__item'),
+  avatar: document.querySelectorAll('.accordeon__item-avatar'),
+  button: document.querySelectorAll('.accordeon__item-title'),
+  drop: document.querySelectorAll('.accordeon__item-info'),
+  computedHeight: []
+};
 
-//Ниже задется ширина обертки выпадашки (выпадашки записываются в массив dropBlock)
-//Это сделано для анимирования выпадания 
-var dropBlock = document.querySelectorAll('.accordeon__item-info');
-var avatar = document.querySelectorAll('.accordeon__item-avatar');
-var computedHeight = [];
 
 var media = window.matchMedia('(max-width: 768px)');
+var avatarComputedHeight = [];
 
+window.onload = function (){
+  for(let i = 0; i < accoItems.self.length; i++) {
+    //Считываение высоты выпадашки и присвеивание высоты обертке выпадашки для анимации
+    accoItems.drop[i].style.height = 'auto'; //Разворачивание выпадашки для считывания высоты
+    accoItems.computedHeight.push(getComputedStyle(accoItems.drop[i]).height); //считывание высоты выпадашки
+    accoItems.drop[i].parentNode.style.height = accoItems.computedHeight[i]; //присвоение высоты выпадашки ее обертаке
+    accoItems.drop[i].style.height = ''; //Сворачивание выпадашки
 
-for (let i = 0; i < dropBlock.length; i++) {
+    //Считывание высоты аватарки, для анимации(для мобильных)
+    accoItems.avatar[i].style.height = 'auto'; //разворач-е автарки для считывания высоты(для мобильных) 
+    avatarComputedHeight.push(getComputedStyle(accoItems.avatar[i]).height);//считывание высоты аватарки
+    accoItems.avatar[i].style.height = '';//сворачивание аватарки
 
-  if(media.matches) {
-    dropBlock[i].insertBefore(avatar[i], dropBlock[i].firstChild);
-    computedHeight.push(getComputedStyle(dropBlock[i]).height);
-  } else {
-    //Ширина обертки приравнивается к просчитанной браузером ширине выпадашки
-    dropBlock[i].parentNode.style.height = getComputedStyle(dropBlock[i]).height;
+    //для мобильных, обертка выпадашки не имеет жесткой высоты
+    if(media.matches) {
+      accoItems.drop[i].parentNode.style.height = '';
+    }
   }
-
-  //Ширина самой выпадашки приравнивается к 0 
-  dropBlock[i].style.height = '0px';
 }
 
-// Функционал аккордеона
-var buttons = document.querySelectorAll('.accordeon__item-title');
-
-//Массив булеанов, определяющих, открыта ли выпадашка, по умолч-ю false
-var isActive = [];
-for (let i = 0; i < buttons.length; i++) {
-  isActive.push(false);
-}
-
-//Цикл задающий каждой кнопке обработчик событий
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener('click', function(event) { 
-    if(!isActive[i]) {
-      
-      for(let x = 0; x < dropBlock.length; x++) {
-        if(x != i && isActive[x]) {
-          buttons[x].parentNode.classList.remove('accordeon__item--active');
-          dropBlock[x].style.height = '0px';
-          isActive[x] = false;
+//Добавл-е обработчика событий на кнопки
+for (let i = 0; i < accoItems.self.length; i++) {
+  accoItems.button[i].addEventListener('click', function () {
+    
+    //Удал-е активного класса у не выбранных эл-тов
+    for(let x = 0; x < accoItems.self.length; x++) {
+      if(x != i && accoItems.self[x].classList.contains('accordeon__item--active')) {
+        accoItems.self[x].classList.remove('accordeon__item--active');
+        if(media.matches) {
+          accoItems.drop[x].style.height = '';
+          accoItems.avatar[x].style.height = '';
         }
       }
-      this.parentNode.classList.add('accordeon__item--active');
+    }
+
+    //Добавл-е и удал-е активного класса при нажатии кнопки
+    if(accoItems.self[i].classList.contains('accordeon__item--active')) {
+      accoItems.self[i].classList.remove('accordeon__item--active');
       
+      //Высота выпадашки и высота аватарки устан-ся по умолч-ю(0px)(для моб. устройств)
       if(media.matches) {
-        dropBlock[i].style.height = computedHeight[i];
-      } else {
-        dropBlock[i].style.height = '100%';
+        accoItems.drop[i].style.height = '';
+        accoItems.avatar[i].style.height = '';
       }
-      
-      isActive[i] = true;
+
     } else {
-      this.parentNode.classList.remove('accordeon__item--active');
-      dropBlock[i].style.height = '0px';
-      isActive[i] = false;
-    }    
+      accoItems.self[i].classList.add('accordeon__item--active');
+
+      //Высота выпадашки и высота аватарки устан-ся на считынные ранее велечины
+      if(media.matches) {
+        accoItems.drop[i].style.height = accoItems.computedHeight[i];
+        accoItems.avatar[i].style.height = avatarComputedHeight[i];
+      }
+
+    }
   });
 }
 
-//Код выполняющийся при ресайзе окна в реальном времени
-media.addEventListener('change', function () {
+
+//Код для изменения размера окна в реальном времени, чтобы верстка не ломалась
+media.addEventListener('change', function() {
   if(media.matches) {
-    for(let i = 0; i < dropBlock.length; i++) {
-      dropBlock[i].insertBefore(avatar[i], dropBlock[i].firstChild);
-      dropBlock[i].parentNode.style.height = 'initial';
-      dropBlock[i].style.height = 'initial';
-      computedHeight[i] = getComputedStyle(dropBlock[i]).height;
-      if(!isActive[i]) {
-        dropBlock[i].style.height = '0px';
-      }
+    for(let i = 0; i < accoItems.self.length; i++) {
+      accoItems.drop[i].parentNode.style.height = '';
     }
   } else {
-    for(let i = 0; i < dropBlock.length; i++) {
-      buttons[i].parentNode.insertBefore(avatar[i], buttons[i]);
-      dropBlock[i].style.height = 'initial';
-      dropBlock[i].parentNode.style.height = getComputedStyle(dropBlock[i]).height;
-      if(!isActive[i]) {
-        dropBlock[i].style.height = '0px';
-      }
-    } 
-  } 
+    for(let i = 0; i < accoItems.self.length; i++) {
+      accoItems.drop[i].parentNode.style.height = accoItems.computedHeight[i];
+    }
+  }
 });
+
