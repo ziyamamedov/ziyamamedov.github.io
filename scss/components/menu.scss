@@ -16,13 +16,11 @@
   top: 0;
   right: 0;
 
-  &--active {
-    @include tablets {
-      width: 100%;
-      justify-content: flex-end;
-    }
-    
+  @include tablets {
+    justify-content: flex-end;
   }
+    
+
 }
 
 .menu__item {
@@ -32,27 +30,23 @@
 
   &--active {
     .menu__item-content {
-      width: 49vw;
-      @include tablets {
-        flex: 1;
-        transition: flex 1s width 1s;
-      }
-
-      
+      width: 28.3125rem;
     }
 
     @include tablets {
       flex: 1;
-      transition: flex 1s;
     }
 
     @include phones {
       position: absolute;
-      right: 0;
+
       top: 0;
       bottom: 0;
       z-index: 2;
-      width: 100vw;
+      
+
+      .menu__item-content {}
+        
     }
   }
 }
@@ -106,8 +100,8 @@
   width: 0;
   overflow: hidden;
   background-color: rgb(51, 53, 55, .9);
+
   
-  transition: width 1s;
 
   &-text {
     height: 100%;
@@ -115,7 +109,6 @@
     padding-top: 3rem;
     padding-left: 1.5625rem;
     padding-right: 3.375rem;
-    
   }
 
   @include phones {

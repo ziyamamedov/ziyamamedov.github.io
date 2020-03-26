@@ -1457,8 +1457,7 @@ button:focus {
   right: 0;
 }
 @media screen and (max-width: 768px) {
-  .menu__list--active {
-    width: 100%;
+  .menu__list {
     justify-content: flex-end;
   }
 }
@@ -1469,28 +1468,19 @@ button:focus {
   position: relative;
 }
 .menu__item--active .menu__item-content {
-  width: 49vw;
-}
-@media screen and (max-width: 768px) {
-  .menu__item--active .menu__item-content {
-    flex: 1;
-    transition: flex 1s width 1s;
-  }
+  width: 28.3125rem;
 }
 @media screen and (max-width: 768px) {
   .menu__item--active {
     flex: 1;
-    transition: flex 1s;
   }
 }
 @media screen and (max-width: 480px) {
   .menu__item--active {
     position: absolute;
-    right: 0;
     top: 0;
     bottom: 0;
     z-index: 2;
-    width: 100vw;
   }
 }
 
@@ -1541,7 +1531,6 @@ button:focus {
   width: 0;
   overflow: hidden;
   background-color: rgba(51, 53, 55, 0.9);
-  transition: width 1s;
 }
 .menu__item-content-text {
   height: 100%;
