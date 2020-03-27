@@ -1,107 +1,104 @@
 function Accordeon (selector, activeClass) {
-  this.target = document.querySelector(selector);
-  this.elements = this.target.children;
-  this.elemCount = this.elements.length;
-  this.buttons = this.target.querySelectorAll('[data-vector]');
-  this.itemContent = this.target.querySelectorAll('.menu__item-content');
-  this.textContent = this.target.querySelectorAll('.menu__item-content-text');
-  this.closeBtn = this.target.querySelectorAll('.close-btn');
+  
+  this.target = document.querySelector(selector); //Элемент Аккордеона
+  var elemCount = this.target.children.length; //Кол-во эл-тов в акк-не
 
-
+  //Медиа-запросы
   var media = window.matchMedia('(max-width: 768px');
   var mediaPhones = window.matchMedia('(max-width: 480px');
 
-
-  this.removeClass = function (elem, classToRemove) {
-    elem.classList.remove(classToRemove);
-  }
-
-  this.removeOther = function(elem) {
-    for(let i = 0; i < this.elemCount; i++) {
-      if(this.elements[i] != elem) {
-        this.elements[i].classList.remove(activeClass);
-        if(media.matches) {
-          this.itemContent[i].style.width = '';
-          this.closeBtn[i].style.display = 'none';
-        }
-      }
-    }
-  }
-
-  this.readComputedSize = function(elem, styleToRead) {
-    var compStyle;
-
-    if(styleToRead == 'width') {
-      elem.style.width = 'auto';
-      compStyle = getComputedStyle(elem).width;
-      elem.style.width = '';
-    } else if (styleToRead == 'height') {
-      elem.style.width = 'auto';
-      compStyle = getComputedStyle(elem).height;
-      elem.style.width = '';
-    }
-    return compStyle;
-  }
-  
-  var itemWidthMobile;
-
-  // Начальная настройка ширины всплывающего окна
-  if (mediaPhones.matches) {
-    itemWidthMobile = `${document.documentElement.clientWidth - (parseInt((getComputedStyle(this.buttons[0]).width)))}px`;
-  } else if(media.matches) {
-    itemWidthMobile = `${document.documentElement.clientWidth - (parseInt((getComputedStyle(this.buttons[0]).width)) * this.buttons.length)}px`;
-  } 
-
-  console.log(itemWidthMobile);
-
-  //Певоначальная настройка стилей
-  for(let i = 0; i < this.elemCount; i ++) {
-
-    this.elements[i].classList.add(activeClass);
-    if(media.matches) {
-      this.textContent[i].style.width = `${parseInt(itemWidthMobile) - 15}px`;
+  //Переключение Активного класса
+  this.toggleClass = function (elem, content) {
+    if(!elem.classList.contains(activeClass)) {
+      elem.classList.add(activeClass); 
     } else {
-      this.textContent[i].style.width = this.readComputedSize(this.textContent[i], 'width');
+      elem.classList.remove(activeClass);
+      content.style.width = ''; //Ширина выпадашки приравнивается к исх. знач-ю(0)
     }
-    this.elements[i].classList.remove(activeClass);
-    this.itemContent[i].style.transition = 'width 1s';
   }
 
-  //Обработчик событий для заголовков
-  for(let i = 0; i < this.elemCount; i++) {
-    this.buttons[i].addEventListener('click', (e) => {
-      
-      e.preventDefault();
-
-      if(!this.elements[i].classList.contains(activeClass)) {
-        this.elements[i].classList.add(activeClass);
-        if(media.matches) {
-          this.itemContent[i].style.width = itemWidthMobile;
-          this.closeBtn[i].style.display = '';
+  // Закрытие предыдущего открытого эл-та
+  this.removeLastActive = function(activeElem) {
+    if(activeElem) {
+        if(activeElem == item) {
+          activeElem = null;
+        } else {
+          activeElem.classList.remove(activeClass);
+          activeElem.querySelector('.menu__item-content').style.width = '';
         }
-      } else {
-        this.elements[i].classList.remove(activeClass);
-        this.itemContent[i].style.width = '';
+      } 
+  }
+
+  //Ф-я устан-ет ширину выпадашки и текста в ней 
+  function setWidth(elem, textElem, button) {
+    var itemWidth;
+
+    if (mediaPhones.matches) {
+      itemWidth = `${document.documentElement.clientWidth - (parseInt((getComputedStyle(button).width)))}px`;
+      elem.style.width = itemWidth;
+      textElem.style.width = `${parseInt(itemWidth)}px`;
+    } else if(media.matches) {
+      itemWidth = `${document.documentElement.clientWidth - (parseInt((getComputedStyle(button).width)) * elemCount)}px`;
+      elem.style.width = itemWidth;
+      textElem.style.width = `${parseInt(itemWidth)}px`;
+    } else {
+      itemWidth = `453px`;
+      elem.style.width = itemWidth;
+      textElem.style.width = `${parseInt(itemWidth)}px`;
+    }
+  }
+
+  //Переменные, используемые в фуекциях
+  var item; //Элемент аккордеона(li)
+  var activeItem; //Активный элемент
+  var content; // Открывающийся элемент
+  var text // Текст в откр-ся элементе
+  
+
+  this.accoFunction = function() {
+
+    //Обработчик событий
+    this.target.addEventListener('click', (e) => {
+
+    var button = e.target.closest('[data-vector]');
+    var pushContent = e.target.closest('.menu__item-content');
+      
+    if(button) {
+        e.preventDefault();
+        
+        item = button.parentElement;
+        content = item.querySelector('.menu__item-content');
+        text = item.querySelector('.menu__item-content-text');
+
+        this.removeLastActive(activeItem);
+
+        setWidth(content, text, button);
+        this.toggleClass(item, content);
+        activeItem = item;
       }
 
-      this.removeOther(this.elements[i]);
+      //Нажатие на тело открывшегося элемента
+      if(e.target == pushContent) {
+        this.toggleClass(pushContent.parentElement, pushContent);
+      } 
     });
   }
-
-  //Обработчик кликов для кнопки закрыть
-  if(media.matches) {
-    for(let i = 0; i < this.closeBtn.length; i++) {
-      this.closeBtn[i].addEventListener('click', (e) => {
-        this.elements[i].classList.remove(activeClass);
-        this.itemContent[i].style.width = '';
-        this.closeBtn[i].style.display = 'none';
-      });
-    }
-  }
-  
 
 }//Конец конструкции Accordeon
 
 
+const mediaTablets = window.matchMedia('(max-width: 768px)');
+const mediaPhones = window.matchMedia('(max-width: 480px)');
+
 var menuAcco = new Accordeon('#menuAcco', 'menu__item--active');
 
+menuAcco.accoFunction();
+
+//Перезагрузка страницы при изменении размеров окна в реальном времени
+mediaTablets.addEventListener('change', function(){
+    location.reload();
+
+});
+mediaPhones.addEventListener('change', function(){
+    location.reload();
+});

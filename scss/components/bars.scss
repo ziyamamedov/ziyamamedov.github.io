@@ -10,6 +10,7 @@
 
     @include tablets {
       max-width: 570px;
+      width: 85%;
     }
 
     @include phones {
@@ -71,7 +72,19 @@
   height: 32px;
 }
 
+.bars__slider-wrapper{
+  overflow: hidden;
+}
+
+.bars__slider-list {
+  display: flex;
+
+  transition: transform .5s;
+}
+
 .bars__slider-item {
+  flex: 0 0 100%;
+
   display: flex;
   align-items: center;
 

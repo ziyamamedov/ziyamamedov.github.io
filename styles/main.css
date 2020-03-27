@@ -515,6 +515,10 @@ button:focus {
   html {
     font-size: 12px;
   }
+
+  .container {
+    width: 85%;
+  }
 }
 .button {
   display: block;
@@ -1018,6 +1022,7 @@ button:focus {
 @media screen and (max-width: 768px) {
   .bars .container {
     max-width: 570px;
+    width: 85%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1079,7 +1084,17 @@ button:focus {
   height: 32px;
 }
 
+.bars__slider-wrapper {
+  overflow: hidden;
+}
+
+.bars__slider-list {
+  display: flex;
+  transition: transform 0.5s;
+}
+
 .bars__slider-item {
+  flex: 0 0 100%;
   display: flex;
   align-items: center;
 }
@@ -1467,9 +1482,6 @@ button:focus {
   justify-content: flex-end;
   position: relative;
 }
-.menu__item--active .menu__item-content {
-  width: 28.3125rem;
-}
 @media screen and (max-width: 768px) {
   .menu__item--active {
     flex: 1;
@@ -1531,9 +1543,9 @@ button:focus {
   width: 0;
   overflow: hidden;
   background-color: rgba(51, 53, 55, 0.9);
+  transition: width 1s;
 }
 .menu__item-content-text {
-  height: 100%;
   line-height: 1.5;
   padding-top: 3rem;
   padding-left: 1.5625rem;
