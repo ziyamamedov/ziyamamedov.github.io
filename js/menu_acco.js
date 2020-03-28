@@ -65,8 +65,10 @@ function Accordeon (selector, activeClass) {
       
     if(button) {
         e.preventDefault();
-        
-        item = button.parentElement;
+        if(button.dataset.vector != 'cls-btn'){
+          item = button.parentElement;
+        }
+        console.log(button);
         content = item.querySelector('.menu__item-content');
         text = item.querySelector('.menu__item-content-text');
 

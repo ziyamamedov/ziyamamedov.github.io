@@ -806,66 +806,69 @@
           
           <h2 class="section-title">Отзывы</h2>
 
-          <ul class="reviews__list">
-            
-            <li class="reviews__item review" id="review_1">
-              <div class="review__avatar">
-                <img src="./images/avatars/reviews_avatar_1.jpg" alt="Алена фото" class="review__avatar-img">
-              </div>
-              <article class="review__content">
-                <h3 class="review__title">Лучший перекус</h3>
-                <p class="review__text">
-                  Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В течение дня сижу за компьютером и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик – он всегда под рукой. Это приятно и удобно. 
-                </p>
-                <h4 class="review__author">Алена Хмельницкая</h4>
-              </article>
-            </li>
+          <div class="reviews__slider" id='reviewsSlider'>
 
-            <li class="reviews__item review" id="review_2">
-              <div class="review__avatar">
-                <img src="./images/avatars/reviews_avatar_2.jpg" alt="Вадим фото" class="review__avatar-img">
-              </div>
-              <article class="review__content">
-                <h3 class="review__title">Идеально подходят для спортсменов</h3>
-                <p class="review__text">
-                  После тренировок всегда хочется быстро закинуться чем-то белковым, потому что до дома ещё нужно доехать. А кушать хочется. Протеиновые батончики всегда выручают в этом плане. Спасибо производителю за этот качественный и экологичный продукт.
-                </p>
-                <h4 class="review__author">Вадим Грачев</h4>
-              </article>
-            </li>
+            <ul class="reviews__list">
+              
+              <li class="reviews__item review">
+                <div class="review__avatar">
+                  <img src="./images/avatars/reviews_avatar_1.jpg" alt="Алена фото" class="review__avatar-img">
+                </div>
+                <article class="review__content">
+                  <h3 class="review__title">Лучший перекус</h3>
+                  <p class="review__text">
+                    Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В течение дня сижу за компьютером и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик – он всегда под рукой. Это приятно и удобно. 
+                  </p>
+                  <h4 class="review__author">Алена Хмельницкая</h4>
+                </article>
+              </li>
+  
+              <li class="reviews__item review">
+                <div class="review__avatar">
+                  <img src="./images/avatars/reviews_avatar_2.jpg" alt="Вадим фото" class="review__avatar-img">
+                </div>
+                <article class="review__content">
+                  <h3 class="review__title">Идеально подходят для спортсменов</h3>
+                  <p class="review__text">
+                    После тренировок всегда хочется быстро закинуться чем-то белковым, потому что до дома ещё нужно доехать. А кушать хочется. Протеиновые батончики всегда выручают в этом плане. Спасибо производителю за этот качественный и экологичный продукт.
+                  </p>
+                  <h4 class="review__author">Вадим Грачев</h4>
+                </article>
+              </li>
+  
+              <li class="reviews__item review">
+                <div class="review__avatar">
+                  <img src="./images/avatars/reviews_avatar_3.jpg" alt="Мария фото" class="review__avatar-img">
+                </div>
+                <article class="review__content">
+                  <h3 class="review__title">Лучшие батончики премиум уровня</h3>
+                  <p class="review__text">
+                    Батончики понравились. На мой взгляд слегка завышена цена по сравнению с конкурентами, однако, как говорится – оно того стоит. Нравится носить с собой, нравится держать в руке. Ну и конечно же, кушать. Идеально утоляют голод, хоть и не надолго. Через час уже ем ещё один. Но это скорее плюс, чем минус.
+                  </p>
+                  <h4 class="review__author">Мария Орлова</h4>
+                </article>
+              </li>
+  
+            </ul>
 
-            <li class="reviews__item review" id="review_3">
-              <div class="review__avatar">
-                <img src="./images/avatars/reviews_avatar_3.jpg" alt="Мария фото" class="review__avatar-img">
-              </div>
-              <article class="review__content">
-                <h3 class="review__title">Лучшие батончики премиум уровня</h3>
-                <p class="review__text">
-                  Батончики понравились. На мой взгляд слегка завышена цена по сравнению с конкурентами, однако, как говорится – оно того стоит. Нравится носить с собой, нравится держать в руке. Ну и конечно же, кушать. Идеально утоляют голод, хоть и не надолго. Через час уже ем ещё один. Но это скорее плюс, чем минус.
-                </p>
-                <h4 class="review__author">Мария Орлова</h4>
-              </article>
-            </li>
-
-          </ul>
-
-          <ul class="reviews__pagination">
-            <li class="reviews__pagination-item reviews__pagination-item--active">
-              <button type="button" class="reviews__pagination-button">
+            <div class="reviews__pagination">
+              
+              <button type="button" class="reviews__pagination-button reviews__pagination-button--active" data-vector="1">
                 <img src="./images/avatars/reviews_avatar_1.jpg" alt="" class="reviews__pagination-img">
               </button>
-            </li>
-            <li class="reviews__pagination-item">
-              <button type="button" class="reviews__pagination-button">
+
+              <button type="button" class="reviews__pagination-button" data-vector="2">
                 <img src="./images/avatars/reviews_avatar_2.jpg" alt="" class="reviews__pagination-img">
               </button>
-            </li>
-            <li class="reviews__pagination-item">
-              <button type="button" class="reviews__pagination-button">
+
+              <button type="button" class="reviews__pagination-button" data-vector="3">
                 <img src="./images/avatars/reviews_avatar_3.jpg" alt="" class="reviews__pagination-img">
               </button>
-            </li>
-          </ul>
+
+            </div>
+          </div>
+
+          
 
         </div>
 
@@ -1086,7 +1089,7 @@
   </div><!--End of .wrapper-->
 
   <script src="./js/hamburger_menu.js"></script> <!--Hamburger menu code-->
-  <script src="./js/slider.js"></script> <!--Hamburger menu code-->
+  <script src="./js/sliders.js"></script> <!--Hamburger menu code-->
   <script src="./js/team_acco.js"></script>
   <script src="./js/menu_acco.js"></script>
 </body>
