@@ -81,12 +81,16 @@ function Slider(selector) {
   }
 } // Конец конструкции Slider
 
-
+// Слайдер секции батончики
 var barsSlider = new Slider('#bars');
 
+barsSlider.addListenersForArrows();
+
+
+
+
+// Слайдер секции отзывы
 var reviewsSlider = new Slider('#reviewsSlider');
-
-
 
 var clickTarget;
 var activeButton = reviewsSlider.target.querySelector('.reviews__pagination-button--active');
