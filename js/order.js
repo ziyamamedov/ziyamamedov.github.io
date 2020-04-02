@@ -10,13 +10,15 @@ submitBtn.addEventListener('click', function(event) {
   // Если валидна, выполнится код ниже
   if(orderForm.checkValidity()){
     event.preventDefault();
-
-    // Создании экземпляра объекта FormData
+    // Создание экземпляра объекта FormData
     const data = new FormData();
     data.append("name", orderForm.elements.username.value);
     data.append("phone", orderForm.elements.phone.value);
     data.append("comment", orderForm.elements.comment.value);
     data.append("to", "ziya_90@mail.ru");
+
+    //Очистка формы
+    orderForm.elements.reset.click();
 
     // Создание AJAX запроса
     const xhr = new XMLHttpRequest();

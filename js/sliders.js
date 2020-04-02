@@ -93,6 +93,7 @@ barsSlider.addListenersForArrows();
 var reviewsSlider = new Slider('#reviewsSlider');
 
 var clickTarget;
+
 var activeButton = reviewsSlider.target.querySelector('.reviews__pagination-button--active');
 
 var timerId = setInterval(function(){
@@ -128,7 +129,6 @@ reviewsSlider.target.addEventListener('click', function (e) {
       clickTarget.classList.add('reviews__pagination-button--active');
       reviewsSlider.changeSlide(clickTarget.dataset.vector-1, 1000);
       activeButton = clickTarget;
-
     }
   } 
 });

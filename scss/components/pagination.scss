@@ -4,6 +4,7 @@
   top: 20%;
   right: 3%;
 
+  z-index: 10;
   @include tablets {
     display: none;
   }
@@ -23,6 +24,7 @@
     .pagination__link:after {
       width: 16px;
       height: 16px;
+      box-shadow: 0px 0px 5px black;
     }
   }
 
@@ -33,6 +35,8 @@
   width: 19px;
   height: 19px;
   position: relative;
+
+  
 
   &:before {
     content: '';
@@ -45,6 +49,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    box-shadow: 0px 0px 5px black;
   }
 
   &:after {
@@ -56,6 +62,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     transition: .2s;
+
+    
   }
 }
 

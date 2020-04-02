@@ -64,8 +64,8 @@
           <span class="phone-number__text">8 800 903 90 90</span>
         </a>
 
-        <a href="#" class="hamburger" id="hamburgerBtn">
-          <svg class='hamburger__icon'>
+        <a href='' class="hamburger" id="hamburgerBtn">
+          <svg class='hamburger__icon' >
             <use xlink:href='./svg/sprite.svg#hamburger'></use>
           </svg>
         </a>
@@ -74,7 +74,7 @@
           
     </header><!--End of .header-->
 
-    <main class="main-content">  
+    <main class="main-content" id='mainContent'>  
 
       <section class="section welcome" id="welcome">
         
@@ -192,7 +192,7 @@
       <section class="section bars" id="bars">
 
         <div class="bars__slider-arrow-wrapper">
-          <a href="#" class="bars__slider-arrow bars__slider-arrow--left" data-vector="previous">
+          <a href='' class="bars__slider-arrow bars__slider-arrow--left" data-vector="previous">
             <svg class="bars__slider-arrow-svg">
               <use xlink:href='./svg/sprite.svg#slider-arrow-left'></use>
             </svg>
@@ -421,7 +421,7 @@
         </div> <!--end of container-->
 
         <div class="bars__slider-arrow-wrapper">
-          <a href="#" class="bars__slider-arrow" data-vector="next">
+          <a href='' class="bars__slider-arrow" data-vector="next">
             <svg class="bars__slider-arrow-svg">
               <use xlink:href='./svg/sprite.svg#slider-arrow-right'></use>
             </svg>
@@ -527,7 +527,7 @@
         <ul class="menu__list" id='menuAcco'>
 
           <li class="menu__item menu__item--milk">
-            <a href='#' class="menu__item-title" data-vector="1">
+            <a href='' class="menu__item-title" data-vector="1">
               <h3 class="menu__item-title-text">Батончики с молоком</h3>
             </a>
             <div class="menu__item-content">
@@ -544,7 +544,7 @@
           </li>
 
           <li class="menu__item  menu__item--honey">
-            <a href='#' class="menu__item-title" data-vector="2">
+            <a href='' class="menu__item-title" data-vector="2">
               <h3 class="menu__item-title-text">С медом и фруктами</h3>
             </a>
             <div class="menu__item-content">
@@ -561,7 +561,7 @@
           </li>
 
           <li class="menu__item  menu__item--berries">
-            <a href='#' class="menu__item-title" data-vector="3">
+            <a href='' class="menu__item-title" data-vector="3">
               <h3 class="menu__item-title-text">Дикие ягоды</h3>
             </a>
             <div class="menu__item-content">
@@ -757,7 +757,7 @@
 
               <div class="form__row form__row--submit">
                 <button type="submit" class='button' name="submit">Заказать</button>
-                <button type="reset" class="reset_btn">Очистить</button>
+                <button type="reset" class="reset_btn" name="reset">Очистить</button>
               </div>
               
 
@@ -796,28 +796,28 @@
           <div class="footer__right">
             <ul class="socials">
               <li class="socials__item socials__item--vk">
-                <a href="#" class="socials__item-link">
+                <a href='' class="socials__item-link">
                   <svg class="socials__item-icon">
                     <use xlink:href='./svg/sprite.svg#vk-icon'></use>
                   </svg>
                 </a>
               </li>
               <li class="socials__item socials__item--fb">
-                <a href="#" class="socials__item-link">
+                <a href='' class="socials__item-link">
                   <svg class="socials__item-icon">
                     <use xlink:href='./svg/sprite.svg#fb-icon'></use>
                   </svg>
                 </a>
               </li>
               <li class="socials__item socials__item--inst">
-                <a href="#" class="socials__item-link">
+                <a href='' class="socials__item-link">
                   <svg class="socials__item-icon">
                     <use xlink:href='./svg/sprite.svg#inst-icon'></use>
                   </svg>
                 </a>
               </li>
               <li class="socials__item socials__item--tw">
-                <a href="#" class="socials__item-link">
+                <a href='' class="socials__item-link">
                   <svg class="socials__item-icon">
                     <use xlink:href='./svg/sprite.svg#tw-icon'></use>
                   </svg>
@@ -839,31 +839,8 @@
     
     
     <nav class="pagination">
-      <ul class="pagination__list">
-        <li class="pagination__item pagination__item--active">
-          <a href="#welcome" class="pagination__link"></a>
-        </li>
-        <li class="pagination__item">
-          <a href="#about" class="pagination__link"></a>
-        </li>
-        <li class="pagination__item">
-          <a href="#bars" class="pagination__link"></a>
-        </li>
-        <li class="pagination__item">
-          <a href="#team" class="pagination__link"></a>
-        </li>
-        <li class="pagination__item">
-          <a href="#menu" class="pagination__link"></a>
-        </li>
-        <li class="pagination__item">
-          <a href="#reviews" class="pagination__link"></a>
-        </li>
-        <li class="pagination__item">
-          <a href="#howWeWork" class="pagination__link"></a>
-        </li>
-        <li class="pagination__item">
-          <a href="#contacts" class="pagination__link"></a>
-        </li>
+      <ul class="pagination__list" id='mainPagination'>
+        
       </ul>
     </nav>
 
@@ -880,13 +857,17 @@
 
   </div><!--End of .wrapper-->
 
-
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script><!--jQuery-->
   <script src="./js/modal.js"></script> <!--Hamburger menu code-->
   <script src="./js/hamburger_menu.js"></script> <!--Hamburger menu code-->
   <script src="./js/sliders.js"></script> <!--Hamburger menu code-->
-  <script src="./js/team_acco.js"></script>
-  <script src="./js/menu_acco.js"></script>
-  <script src="./js/order.js"></script>
+  <script src="./js/team_acco.js"></script><!--accordeon Team section-->
+  <script src="./js/menu_acco.js"></script><!--accordeon menu section-->
+  <script src="./js/order.js"></script><!--order form functionality-->
+  <script src="./js/one_page_scroll.js"></script>
 </body>
 
 

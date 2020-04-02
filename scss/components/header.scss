@@ -41,6 +41,7 @@
   width: 1.5rem;
   height: 1.5rem;
   fill: white;
+  filter: drop-shadow( 0 0 5px #000);
 }
 
 @media (max-width: 768px) {
@@ -49,6 +50,11 @@
   }
 
   .hamburger {
+    position: fixed;
+    top: 30px;
+    right: 25px;
     display: initial;
+
+    
   }
 }
