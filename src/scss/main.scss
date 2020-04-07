@@ -1,0 +1,30 @@
+//settings
+@import './settings/vars';
+@import './settings/mixins';
+@import './settings/fonts';
+@import './settings/base';
+
+
+// components
+@import './components/button';
+@import './components/pagination';
+@import './components/benefit';
+@import './components/review';
+@import './components/header';
+@import './components/navigation';
+@import './components/welcome';
+@import './components/about';
+@import './components/bars';
+@import './components/bar';
+
+
+@import './components/team';
+@import './components/menu';
+@import './components/reviews';
+@import './components/how-we-work';
+@import './components/video-player';
+@import './components/order';
+@import './components/contacts';
+@import './components/footer';
+@import './components/modal';
+

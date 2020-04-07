@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+ul, p, h1, h2, h3, h4{
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 16px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body{
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.42;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow: hidden;
+}
+
+button{
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+a {
+  -webkit-tap-highlight-color:  transparent;
+}
+
+.wrapper{
+  min-height: 100%;
+    overflow: hidden;
+}
+
+
+.container {
+  width: 95%;
+  max-width: $container;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.container--vertical-align--center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section {
+  height : 100vh;
+  min-height: 650px;
+  position: relative;
+}
+
+.section-title {
+  font-size: $sectionTitleFz;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: 367px) {
+  html {
+    font-size: 12px;
+  }
+  .container {
+    width: 85%;
+  }
+}

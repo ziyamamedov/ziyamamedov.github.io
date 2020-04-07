@@ -1,0 +1,10 @@
+
+
+//цикл для создания font-face директив
+@each $fw in ('Black', 'Bold', 'ExtraBold', 'Light', 'Medium', 'Regular', 'Thin') {
+  @each $fs in('', 'Italic') {
+    @include font-face($fw, $fs);
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');

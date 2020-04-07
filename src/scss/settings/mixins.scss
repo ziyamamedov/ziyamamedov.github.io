@@ -1,0 +1,88 @@
+
+//Миксин для создания круглого блока
+@mixin circle($width: 50px, $height: 50px) {
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+//Миксин для создания треугольника
+@mixin triangle($width: 10px, $height: 10px, $color: $darkGreen, $direction: 'down') {
+    
+    height: 0;
+    width: 0;
+    border : $height solid transparent;
+    
+    @if $direction == 'down' {
+      border-right-width: $width / 2;
+      border-left-width: $width / 2;
+      border-top-color: $color;
+      border-bottom-width: 0;
+    } @else if $direction == 'up' {
+      border-right-width: $width / 2;
+      border-left-width: $width / 2;
+      border-bottom-color: $color;
+      border-top-width: 0;
+    } @else if $direction == 'right' {
+      border-top-width: $width / 2;
+      border-bottom-width: $width / 2;
+      border-left-color: $color;
+      border-right-width: 0;
+    } @else if $direction == 'left' {
+      border-top-width: $width / 2;
+      border-bottom-width: $width / 2;
+      border-right-color: $color;
+      border-left-width: 0;
+    }
+    
+}
+
+//Миксин для создания font-face директив
+@mixin font-face($fw: '', $fs: '') {
+  $fow: normal;
+  $fos: normal;
+
+  @if ($fw == 'Black') {
+    $fow: 900;
+  } @else if ($fw == 'Bold') {
+    $fow: bold;
+  } @else if ($fw == 'ExtraBold') {
+    $fow: 800;
+  } @else if ($fw == 'Medium') {
+    $fow: 500;
+  } @else if ($fw == 'Light') {
+    $fow: 300;
+  } @else if ($fw == 'Thin') {
+    $fow: 100;
+  }
+
+  @if ($fs == 'Italic') {
+    $fos: italic;
+    @if($fw == 'Regular') {
+      $fw: '';
+    }
+  }
+
+  @font-face {
+    font-family: 'Alegreya Sans';
+    src: url('fonts/subset-AlegreyaSans-#{$fw}#{$fs}.woff2') format('woff2'),
+        url('fonts/subset-AlegreyaSans-#{$fw}#{$fs}.woff') format('woff');
+    font-weight: $fow;
+    font-style: $fos;
+  }
+}
+
+
+//Миксины для медиа запросов
+@mixin tablets {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}

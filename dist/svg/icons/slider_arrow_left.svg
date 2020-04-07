@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="31.97" viewBox="0 0 17 31.97">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2px;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="54" y="1613.34" width="15" height="29.97" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#151515"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="translate(-53 -1612.34)" style="fill: none; filter: url(#filter)">
+    <path id="arrow-scroll_kопировать_2" data-name="arrow-scroll kопировать 2" class="cls-1" d="M68.994,1614.82l-11.766,10.64a3.978,3.978,0,0,0,0,5.73l11.766,10.64" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use transform="translate(-53 -1612.34)" xlink:href="#arrow-scroll_kопировать_2" style="stroke: #000; filter: none; fill: none"/>
+</svg>

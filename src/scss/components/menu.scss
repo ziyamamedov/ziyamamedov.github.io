@@ -1,0 +1,136 @@
+.menu {
+  background: url('images/img/menu_background.jpg') center center / cover no-repeat;
+  color: #ffffff;
+
+  .section-title {
+    position: absolute;
+    top: 13.5%;
+    left: 7%;
+  }
+}
+
+.menu__list {
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @include tablets {
+    justify-content: flex-end;
+  }
+    
+
+}
+
+.menu__item {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+
+  &--active {
+    
+    @include tablets {
+      flex: 1;
+    }
+
+    @include phones {
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+      
+    }
+  }
+}
+//Фоновые картинки заголовкам меню
+@each $item in ('milk', 'honey', 'berries') {
+  
+   .menu__item--#{$item} {
+     .menu__item-title {
+        background: url('images/img/menu_#{$item}.jpg') center center / cover no-repeat;
+      }   
+    }
+}
+
+
+.menu__item-title {
+  padding-bottom: 2.5rem;
+  color: #ffffff;
+  display: block;
+
+  &-text {
+    display: flex;
+    align-items: center;
+    width: 6.25rem;
+    height: 100%;
+
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1;
+
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    
+    @include tablets {
+      width: 5rem;
+    }
+
+    @include phones {
+      width: initial;
+      min-width: 4rem;
+    }
+  }
+}
+
+
+.menu__item-content {
+  max-width: 33.125rem;
+  font-size: 16px;
+  position: relative;
+
+  width: 0;
+  overflow: hidden;
+  background-color: rgba(51, 53, 55, .9);
+
+  transition: width 1s;
+  
+
+  &-text {
+    line-height: 1.5;
+    padding-top: 3rem;
+    padding-left: 1.5625rem;
+    padding-right: 3.375rem;
+  }
+
+  @include phones {
+    flex: 1;
+  }
+}
+
+
+//Кнопка закрыть
+
+.close-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  display: none;
+  
+  @include tablets {
+    display: initial;
+  }
+
+}
+
+.close-btn__icon {
+  width: 20px;
+  height: 20px;
+  fill: #c2c3c4;
+  transition: fill .2s;
+}

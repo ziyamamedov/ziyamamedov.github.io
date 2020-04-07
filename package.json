@@ -1,0 +1,44 @@
+{
+  "name": "chocco_project",
+  "version": "1.0.0",
+  "description": "Это учебный проект, который я выполняю в рамках курса \"Веб для начинающих\" в онлайн школе \"Loft School\"",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "cross-env NODE_ENV=dev gulp",
+    "build": "cross-env NODE_ENV=prod gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziyamamedov/ziyamamedov.github.io.git"
+  },
+  "author": "Ziya Mamedov",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "browser-sync": "^2.26.7",
+    "cross-env": "^7.0.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^3.0.0",
+    "gulp-rm": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify-es": "^2.0.0",
+    "node-sass": "^4.13.1"
+  },
+  "bugs": {
+    "url": "https://github.com/ziyamamedov/ziyamamedov.github.io/issues"
+  },
+  "homepage": "https://github.com/ziyamamedov/ziyamamedov.github.io#readme"
+}

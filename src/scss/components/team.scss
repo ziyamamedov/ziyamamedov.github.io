@@ -1,0 +1,141 @@
+.team {
+  .section-title {
+    margin-bottom: 5vh;
+  }
+  &:after {
+    content: url('images/img/team_overlaying_img.png');
+    position: absolute;
+    bottom: -3.125rem;
+    left: 3%;
+    z-index: 4;
+  }
+}
+
+.accordeon {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.accordeon__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  max-width: 25%;
+  padding-right: .3vw;
+
+  &--active {
+    .accordeon__item-title {
+      @include tablets {
+        margin-bottom: 1rem;
+      }
+    }
+    .accordeon__item-title:after {
+      transform-origin: center 25%;
+      transform: rotate(180deg);
+    }
+
+    .accordeon__item-avatar {
+      @include tablets {
+        height: auto;
+        margin-bottom: 1.25rem;
+      }
+    }
+
+    .accordeon__item-info {
+      height: 100%;
+    }
+  }
+
+  &:last-child{
+    padding-right: 0;
+
+    @include tablets {
+      margin-bottom: 0;
+    }
+  }
+  
+  @include tablets {
+    max-width: 15.625em;
+    margin-bottom: 1rem;
+  }
+
+}
+
+.accordeon__item-title {
+  font-size: 1.3125rem;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 0.3125rem;
+  position: relative;
+  border: none;
+  background: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 4px;
+    transition: transform .3s;
+
+    @include triangle(9px, 7px, $darkGreen, 'down');
+  }
+
+  @include tablets {
+    margin: 0;
+  }
+}
+
+.accordeon__item-avatar {
+  font-size: 0;
+  max-width: $teamAvatarWidth;
+  max-height: $teamAvatarHeight;
+  margin-bottom: 1.25rem;
+  will-change: height;
+
+  transition: height .3s;
+
+  @include tablets {
+    order: 2;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+}
+
+.accordeon__item-avatar-img {
+  width: 100%;
+  height: 100%;
+}
+
+.accordeon__item-info-wrapper {
+  @include tablets {
+    order: 3;
+  }
+}
+
+.accordeon__item-info {
+  width: 100%;
+  overflow: hidden;
+  height: 0;
+  transition: height .3s;
+}
+
+.accordeon__item-info-position {
+  color: #2a2323;
+}
+
+.accordeon__item-info-text {
+  color: $biege;
+}
+
+
