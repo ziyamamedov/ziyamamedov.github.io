@@ -1,3 +1,5 @@
+var VISIBLE_SECTION; //Глобальная переменная, которая содержит индекс секции которая на экране
+
 function SliderJq(selector){
 
   this.container = $(selector); //Родитель слайдов
@@ -5,9 +7,11 @@ function SliderJq(selector){
   var viewport = $(window); //Объект окна
   this.slidesCount = this.slides.length;//Кол-во слайдов
   var slideHeight = this.slides.outerHeight();//Высота слайда
-  this.slideIndex = this.slides.first().index();//Номер слайда, от 0
-  
-  var isScrollDown; // 
+  this.slideIndex = viewport.scrollTop() / slideHeight;//Номер слайда, от 0
+  VISIBLE_SECTION = this.slideIndex;
+
+
+  var isScrollDown; // Направления скролла
 
   //Переменные связанные с пагинацией
   var pagList,
@@ -73,7 +77,9 @@ function SliderJq(selector){
   this.changeSlide = (index) => {
     $('html, body').stop(true, false).animate({
       'scrollTop' : (index * slideHeight)
-    }, 300);
+    }, 300, ()=>{
+      VISIBLE_SECTION = viewport.scrollTop() / slideHeight;     
+    });
 
     //Если добавлена пагинация
     if(pagList) {
@@ -92,33 +98,40 @@ function SliderJq(selector){
       isScrollDown = false;
       this.slideIndex = this.changeIndex(isScrollDown, this.slideIndex);
       this.changeSlide(this.slideIndex);
-    }
+    } 
   }
 
   //Обраб-к соб-й на прокрутку мыши 
   viewport.on('wheel', (event) => {
+    if(DISABLE_ONE_PAGE_SCROLL) return //Булеан, чтобы отключить scroll, когда он не нужен
 
     var isDown = event.originalEvent.deltaY > 0 ? true : false;
     debounce( () => { this.wheelResponse(isDown) }, 300);
   })
 
   //Обраб-к соб-й на свайп
-  var ts;
-  viewport.on('touchstart', (e) => {
-      ts = e.originalEvent.touches[0].clientY;
-  });
+  this.addLitenersSwipe = ()=> {
+    $(() => {      
+      //Enable swiping...
+      this.container.swipe( {
+        
+        preventDefaultEvents: false,
+        fallbackToMouseEvents: false,
 
-  viewport.on('touchmove', (e) => {
-    var te = e.originalEvent.changedTouches[0].clientY;
-    var isDown;
-    if (ts > te) {
-        isDown = true;
-    } else {
-        isdown = false;
-    }
-    debounce( () => { this.wheelResponse(isDown) }, 300);
-  });
-
+        //Generic swipe handler for all directions
+        swipeUp:(event, direction) => {
+          if(DISABLE_ONE_PAGE_SCROLL) return
+          this.wheelResponse(true);
+        },
+        swipeDown: (event, direction) => {
+          if(DISABLE_ONE_PAGE_SCROLL) return
+          this.wheelResponse(false);
+        },
+        threshold: 30
+      });
+    });
+  }
+  
 }//End of SliderJq
 
 var scroll = new SliderJq('#mainContent');
@@ -129,7 +142,7 @@ var paginItem = $('<li>', {
 paginItem.html('<a href="" class="pagination__link"></a>');
 
 scroll.addPagination('#mainPagination', paginItem, 'pagination__item--active');
-
+scroll.addLitenersSwipe();
 // Обработчик событий на меню
 $('body').on('click', '[href*="#"]', (e) => {
   e.preventDefault();

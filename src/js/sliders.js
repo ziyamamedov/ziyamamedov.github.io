@@ -1,5 +1,6 @@
 function Slider(selector) {
   this.target = document.querySelector(selector);
+  const targetJq = $(selector);// Объект jQuery для touchSwipe
   this.buttons = this.target.querySelectorAll('[data-vector]');
   var list = this.target.querySelector('ul');
   this.countSlides = list.children.length;
@@ -63,9 +64,10 @@ function Slider(selector) {
     }
   }
 
+
   addElems();
 
-  this.addListenersForArrows = () =>  {
+  this.addListenersArrows = () =>  {
     for(let i = 0; i < this.buttons.length; i++) {
       this.buttons[i].addEventListener('click', (e) => {
         
@@ -77,15 +79,37 @@ function Slider(selector) {
         this.changeSlide(this.currentSlideIndex, 500);
 
       });
+      
     }
   }
+
+  this.addLitenersSwipe = ()=> {
+    $(() => {      
+      
+      //Enable swiping...
+      targetJq.swipe( {
+        preventDefaultEvents: false,
+        fallbackToMouseEvents: false,
+        swipeLeft: (event, direction) => {
+          this.next();
+          this.changeSlide(this.currentSlideIndex, 500);
+        },
+        swipeRight: (event, direction) => {
+          this.previous();   
+          this.changeSlide(this.currentSlideIndex, 500);
+        },
+        threshold: 30
+      });
+    });
+  }
+
 } // Конец конструкции Slider
 
 // Слайдер секции батончики
 var barsSlider = new Slider('#bars');
 
-barsSlider.addListenersForArrows();
-
+barsSlider.addListenersArrows();
+barsSlider.addLitenersSwipe();
 
 
 
@@ -94,7 +118,10 @@ var reviewsSlider = new Slider('#reviewsSlider');
 
 var clickTarget;
 
+reviewsSlider.addLitenersSwipe();
+
 var activeButton = reviewsSlider.target.querySelector('.reviews__pagination-button--active');
+
 
 var timerId = setInterval(function(){
   

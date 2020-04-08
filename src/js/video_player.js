@@ -33,7 +33,6 @@ video.addEventListener('durationchange', () => {
   
   durBar.max = dur;
   setDurationBar(0);
-
 })
 
 // Set the current time display

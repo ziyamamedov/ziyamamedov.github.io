@@ -1,11 +1,11 @@
-const hamBtn = document.querySelector('#hamburgerBtn');
+const HAM_BTN = document.querySelector('#hamburgerBtn');
 const hamMenu = document.querySelector('#mainNav');
 const closeBtn = document.querySelector('#hamCloseBtn');
 
 
 
 
-hamBtn.addEventListener('click', function(e) {
+HAM_BTN.addEventListener('click', function(e) {
   e.preventDefault();
   hamMenu.classList.add('nav--active');
   this.style.display = 'none';
@@ -14,11 +14,11 @@ hamBtn.addEventListener('click', function(e) {
 closeBtn.addEventListener('click', function(e) {
   e.preventDefault();
   hamMenu.classList.remove('nav--active');
-  hamBtn.style.display = '';
+  HAM_BTN.style.display = '';
 });
 
 hamMenu.addEventListener('click', function() {
   hamMenu.classList.remove('nav--active');
-  hamBtn.style.display = '';
+  HAM_BTN.style.display = '';
 });
 

@@ -5,7 +5,8 @@ module.exports = {
     './node_modules/normalize.css/normalize.css'
   ],
   JS_LIBS: [
-    './node_modules/jquery/dist/jquery.js'
+    './node_modules/jquery/dist/jquery.js',
+    'node_modules/jquery-touchswipe/jquery.touchSwipe.js'
   ]
 
 }

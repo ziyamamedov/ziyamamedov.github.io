@@ -53,7 +53,6 @@ function Accordeon (selector, activeClass) {
   var activeItem; //Активный элемент
   var content; // Открывающийся элемент
   var text // Текст в откр-ся элементе
-  var hamButton = document.querySelector('#hamburgerBtn');
 
   this.accoFunction = function() {
 
@@ -67,8 +66,8 @@ function Accordeon (selector, activeClass) {
         e.preventDefault();
         if(button.dataset.vector != 'cls-btn'){
           item = button.parentElement;
-          hamButton.style.display = 'none';
-        } else {hamButton.style.display = ''}
+          HAM_BTN.style.display = 'none';//Убираем кнопку-гамбургер(глобальная переменнная из hamburger_menu.js)
+        } else {HAM_BTN.style.display = ''}
         content = item.querySelector('.menu__item-content');
         text = item.querySelector('.menu__item-content-text');
 
@@ -82,7 +81,7 @@ function Accordeon (selector, activeClass) {
       //Нажатие на тело открывшегося элемента
       if(e.target == pushContent) {
         this.toggleClass(pushContent.parentElement, pushContent);
-        hamButton.style.display = '';
+        HAM_BTN.style.display = '';
       } 
     });
   }
@@ -98,10 +97,13 @@ var menuAcco = new Accordeon('#menuAcco', 'menu__item--active');
 menuAcco.accoFunction();
 
 //Перезагрузка страницы при изменении размеров окна в реальном времени
-// mediaTablets.addEventListener('change', function(){
-//     location.reload();
-
-// });
-// mediaPhones.addEventListener('change', function(){
-//     location.reload();
-// });
+mediaTablets.addEventListener('change', function(){
+  if(VISIBLE_SECTION == 3 || VISIBLE_SECTION == 4) {
+    location.reload();
+  }
+});
+mediaPhones.addEventListener('change', function(){
+  if(VISIBLE_SECTION == 3 || VISIBLE_SECTION == 4) {
+    location.reload();
+  }
+});
