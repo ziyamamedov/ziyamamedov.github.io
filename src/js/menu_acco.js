@@ -98,12 +98,8 @@ menuAcco.accoFunction();
 
 //Перезагрузка страницы при изменении размеров окна в реальном времени
 mediaTablets.addEventListener('change', function(){
-  if(VISIBLE_SECTION == 3 || VISIBLE_SECTION == 4) {
     location.reload();
-  }
 });
 mediaPhones.addEventListener('change', function(){
-  if(VISIBLE_SECTION == 3 || VISIBLE_SECTION == 4) {
     location.reload();
-  }
 });

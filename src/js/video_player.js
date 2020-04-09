@@ -21,7 +21,9 @@ const currTimeDisplay = player.querySelector('.player__controls-curr-time');
 setVolume(5);
 
 //Set Set the duration display
-video.addEventListener('durationchange', () => {
+function initialVideoSet() {
+  console.log(video.readyState);
+  
   var dur = Math.round(video.duration);
   var durMin = `${parseInt((dur / 60), 10)}`;
   var durSec = dur % 60;
@@ -33,7 +35,15 @@ video.addEventListener('durationchange', () => {
   
   durBar.max = dur;
   setDurationBar(0);
-})
+}
+
+//Этот интервал устанавливает начальные настройки видео
+//Так как стандартное событие onloadedmetadata не всегда срабатыват
+let videoTimer = setInterval( ()=>{    
+    initialVideoSet();
+    
+    clearInterval(videoTimer);
+},300)
 
 // Set the current time display
 video.addEventListener('play', ()=> {
@@ -93,8 +103,10 @@ function mute(value = 5) {
 function fullScreen() {
   if(player.classList.contains('player--fullscreen')) {
     player.classList.remove('player--fullscreen');
+    DISABLE_ONE_PAGE_SCROLL = false; //отключает скролл когда видео на весь экран
   } else {
     player.classList.add('player--fullscreen');
+    DISABLE_ONE_PAGE_SCROLL = true;
   }
 }
 
