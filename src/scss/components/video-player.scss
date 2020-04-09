@@ -56,6 +56,13 @@
     z-index: 20;
     background-color: #000000;
 
+    @include tablets {
+      max-width: none;
+      max-height: none;
+      width: 100vw;
+      height: 100vh;
+    }
+
     [data-vector="flscr_cls"] {display: initial;}
     [data-vector="flscr_open"] {display: none;} 
 
