@@ -89,17 +89,6 @@ function Accordeon (selector, activeClass) {
 }//Конец конструкции Accordeon
 
 
-const mediaTablets = window.matchMedia('(max-width: 768px)');
-const mediaPhones = window.matchMedia('(max-width: 480px)');
-
 var menuAcco = new Accordeon('#menuAcco', 'menu__item--active');
 
 menuAcco.accoFunction();
-
-//Перезагрузка страницы при изменении размеров окна в реальном времени
-mediaTablets.addEventListener('change', function(){
-    location.reload();
-});
-mediaPhones.addEventListener('change', function(){
-    location.reload();
-});

@@ -139,10 +139,12 @@ var scroll = new SliderJq('#mainContent');
 var paginItem = $('<li>', {
   attr : {'class' : 'pagination__item'}
 });
+
 paginItem.html('<a href="" class="pagination__link"></a>');
 
 scroll.addPagination('#mainPagination', paginItem, 'pagination__item--active');
 scroll.addLitenersSwipe();
+
 // Обработчик событий на меню
 $('body').on('click', '[href*="#"]', (e) => {
   e.preventDefault();
@@ -151,3 +153,18 @@ $('body').on('click', '[href*="#"]', (e) => {
   scroll.slideIndex = item.index();
   scroll.changeSlide(scroll.slideIndex);
 });
+
+// При высоте окна меньше 610px, отключить OnePageScroll, и вернуть обычный скролл 
+
+const mediaHeight = window.matchMedia('(max-height: 609px)');
+
+mediaHeight.addEventListener('change', () => {
+  if(mediaHeight.matches) {
+    DISABLE_ONE_PAGE_SCROLL = true;
+    document.querySelector('body').style.overflow = 'auto';
+  } else {
+    DISABLE_ONE_PAGE_SCROLL = false;
+    console.log('not matches');
+    document.querySelector('body').style.overflow = '';
+  }
+}) 
