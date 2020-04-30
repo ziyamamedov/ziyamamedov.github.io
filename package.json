@@ -15,7 +15,7 @@
   "author": "Ziya Mamedov",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-touchswipe": "^1.6.19",
     "normalize.css": "^8.0.1"
   },
